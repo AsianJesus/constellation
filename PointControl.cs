@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace WFTest
+namespace CanSat_Desktop
 {
     class PointControl
     {
@@ -39,6 +39,14 @@ namespace WFTest
         {
 
             return curve.Points.Where((DataPoint y) => { return y.XValue == x; }).First();
+        }
+        public double MaximumAtRange(double leftX, double rightX)
+        {
+            return curve.Points.Select((DataPoint x) => { return x.YValues.Max(); }).Where((double x) => { return x >= leftX && x <= rightX; }).Max();
+        }
+        public double MinimumAtRange(double leftX, double rightX)
+        {
+            return curve.Points.Select((DataPoint x) => { return x.YValues.Min(); }).Where((double x) => { return x >= leftX && x <= rightX; }).Min();
         }
         public double MaximumX
         {
@@ -84,12 +92,27 @@ namespace WFTest
                 return min;
             }
         }
-        public void CopyTo(PointControl source)
+        public void CopyTo(PointControl target)
         {
             foreach(DataPoint dp in this.curve.Points.ToArray())
             {
-                source.curve.Points.AddXY(dp.XValue, dp.YValues[0]);
-                
+                target.curve.Points.AddXY(dp.XValue, dp.YValues[0]);
+            }
+            ChartType = target.ChartType;
+        }
+        public void CopyFrom(PointControl source)
+        {
+            source.CopyTo(this);
+        }
+        public SeriesChartType ChartType
+        {
+            get
+            {
+                return curve.ChartType;
+            }
+            set
+            {
+                curve.ChartType = value;
             }
         }
     }
