@@ -1,0 +1,17 @@
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Debug\CanSat_Desktop.exe.config
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Debug\CanSat_Desktop.exe
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Debug\CanSat_Desktop.pdb
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Debug\MySql.Data.dll
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Debug\MySql.Data.xml
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.Properties.Resources.resources
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.csproj.GenerateResource.Cache
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.exe
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.pdb
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.csproj.CoreCompileInputs.cache
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.CanSat.resources
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.csproj.CopyComplete
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.csprojResolveAssemblyReference.cache
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\AnalogClocks.AnalogClock.resources
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.InputID.resources
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.ChDBCommands.resources
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.DBConfigure.resources
