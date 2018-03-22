@@ -26,9 +26,10 @@ namespace CanSat_Desktop
         string server, user, passw, database;
         double lastTime;
         int flyID;
+        string flyName;
         int pocketCount;
         DBControl db;
-        PointControl plotTemp,plotPress,plotMF,plotHeight,plotIllum,plotVolt,plotCharge, plotHum,plotCO,plotNH,plotNO;
+        PointControl plotTemp,plotPress,plotSpeed,plotHeight,plotVolt,plotCharge, plotHum,plotCO,plotNH,plotNO;
         PointControl plotSelected;
         string imagePath = "image\\"; 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -67,7 +68,10 @@ namespace CanSat_Desktop
             if (!Directory.Exists(imagePath))
                 Directory.CreateDirectory(imagePath);
             string fileName = DateTime.Now.ToBinary().ToString() + "-" + plotSelected.Name;
+            viewSelected.Snapshot();
+            viewSelected.FullSize(plotSelected.MinimumX, plotSelected.MinimumY, plotSelected.MaximumX, plotSelected.MaximumY);
             chart2.SaveImage(imagePath + fileName + ".png", ChartImageFormat.Png);
+            viewSelected.Rollback();
         }
 
         private void changeImageDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,7 +93,6 @@ namespace CanSat_Desktop
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ResetEverything();
             UpdateInfo();
         }
         private void ResetEverything()
@@ -98,8 +101,7 @@ namespace CanSat_Desktop
             plotCO.Clear();
             plotHeight.Clear();
             plotHum.Clear();
-            plotIllum.Clear();
-            plotMF.Clear();
+            plotSpeed.Clear();
             plotNH.Clear();
             plotNO.Clear();
             plotPress.Clear();
@@ -112,6 +114,9 @@ namespace CanSat_Desktop
             analogClock1.Date = new DateTime(0);
             lastTime = 0;
             pocketCount = 0;
+            progressBar1.Value = progressBar1.Minimum;
+            lblFName.Text = "Flight name";
+            comboBox1.SelectedIndex = 0;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -165,6 +170,13 @@ namespace CanSat_Desktop
                             {"comGetInfo",mysqlCommands["getInfo"] },
                             {"comGetID", mysqlCommands["getID"] }
                         });
+            server = serverDef;
+            user = userDef;
+            passw = passwDef;
+            database = databaseDef;
+            mysqlcomGetID = mysqlCommands["getInfo"];
+            mysqlcomGetInfo = mysqlCommands["getID"];
+            InitializeConnection();
         }
         private void SaveInReg(Dictionary<string,string> pairs)
         {
@@ -173,6 +185,53 @@ namespace CanSat_Desktop
                 Registry.SetValue(@"HKEY_CURRENT_USER\SOFTWARE\Cansat_desktop", kv.Key, kv.Value);
             }
         }
+
+        private void saveEveryPlotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (!Directory.Exists(imagePath))
+            {
+                Directory.CreateDirectory(imagePath);
+            }
+
+            string fileName = DateTime.Now.ToBinary().ToString() + " - ALL ";
+            chart1.SaveImage(imagePath + fileName + ".png", ChartImageFormat.Png);
+        }
+
+        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (flyID == -1)
+                getFlyID();
+            Update();
+        }
+
+        private void resetAndUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetEverything();
+            if (flyID == -1)
+                getFlyID();
+            UpdateInfo();
+        }
+
+        private void gpsX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CanSat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void CanSat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.F5)
+            {
+                    updateToolStripMenuItem1_Click(sender, e);
+            }
+            if (e.KeyData == Keys.F12)
+                resetAndUpdateToolStripMenuItem_Click(sender, e);
+        }
+
         private string GetFromReg(string key, string def = "NULL")
         {
             return Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Cansat_desktop", key, def).ToString();
@@ -209,22 +268,22 @@ namespace CanSat_Desktop
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            KeyPreview = true;
             LoadInfo();
             InitializeConnection();
             plotTemp = new PointControl(chart1.Series[0]);
             plotPress = new PointControl(chart1.Series[1]);
-            plotMF = new PointControl(chart1.Series[2]);
+            plotSpeed = new PointControl(chart1.Series[2]);
             plotHeight = new PointControl(chart1.Series[3]);
-            plotIllum = new PointControl(chart1.Series[4]);
-            plotVolt = new PointControl(chart1.Series[5]);
-            plotCharge = new PointControl(chart1.Series[6]);
-            plotHum = new PointControl(chart1.Series[7]);
-            plotCO = new PointControl(chart1.Series[8]);
-            plotNH = new PointControl(chart1.Series[9]);
-            plotNO = new PointControl(chart1.Series[10]);
+            plotVolt = new PointControl(chart1.Series[4]);
+            plotCharge = new PointControl(chart1.Series[5]);
+            plotHum = new PointControl(chart1.Series[6]);
+            plotCO = new PointControl(chart1.Series[7]);
+            plotNH = new PointControl(chart1.Series[8]);
+            plotNO = new PointControl(chart1.Series[9]);
             plotSelected = new PointControl(chart2.Series[0]);
             viewSelected = new ViewControlUnit(chart2.ChartAreas[0]);
-            flyID = getFlyID();
+            getFlyID();
             lastTime = 0;
             pocketCount = 0;
             UpdateInfo();
@@ -233,20 +292,22 @@ namespace CanSat_Desktop
         private void button1_Click(object sender, EventArgs e)
         {
         }
-        private int getFlyID()
+        private void getFlyID()
         {
             MySqlCommand comm = new MySqlCommand(mysqlcomGetID);
-            int id = 0;
+            flyID = -1;
             try
             {
                 List<List<string>> execResults = db.ExetuceQuery(comm);
-                id = int.Parse(execResults[0][0]);
+                flyID = int.Parse(execResults[0][0]);
+                flyName = execResults[1][0];
+                lblFName.Text = flyName;
+                lblFID.Text = flyID.ToString();
             }
             catch
             {
 
             }
-            return id;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -260,7 +321,6 @@ namespace CanSat_Desktop
 
         private void chart1_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -274,7 +334,8 @@ namespace CanSat_Desktop
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {           
+        {
+            UpdateInfo();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -305,7 +366,7 @@ NO2
                     plotSelected.CopyFrom(plotPress);
                     break;
                 case 3:
-                    plotSelected.CopyFrom(plotMF);
+                    plotSelected.CopyFrom(plotSpeed);
                     break;
                 case 4:
                     plotSelected.CopyFrom(plotHeight);
@@ -313,22 +374,22 @@ NO2
                 /*case 5:
                     plotSelected.CopyFrom(plotIllum);
                     break;*/
-                case 6:
+                case 5:
                     plotSelected.CopyFrom(plotVolt);
                     break;
-                case 7:
+                case 6:
                     plotSelected.CopyFrom(plotCharge);
                     break;
-                case 8:
+                case 7:
                     plotSelected.CopyFrom(plotHum);
                     break;
-                case 9:
+                case 8:
                     plotSelected.CopyFrom(plotCO);
                     break;
-                case 10:
+                case 9:
                     plotSelected.CopyFrom(plotNH);
                     break;
-                case 11:
+                case 10:
                     plotSelected.CopyFrom(plotNO);
                     break;
             }
@@ -370,6 +431,7 @@ NO2
                 plotNO.AddPointsY(no2.ToArray());
                 plotVolt.AddPointsY(voltage.ToArray());
                 plotCharge.AddPointsY(batch.ToArray());
+                plotSpeed.AddPointsY(speed.ToArray());
                 gpsX.Text = gx.ToString();
                 gpsY.Text = gy.ToString();
                 gpsZ.Text = gz.ToString();
@@ -377,6 +439,7 @@ NO2
                     progressBar1.Maximum = pocketCount;
                 progressBar1.Value = pocketCount;
                 analogClock1.Date = new DateTime((long)(time * 10000000));
+                lblFName.Text = flyName;
             }
             catch
             {

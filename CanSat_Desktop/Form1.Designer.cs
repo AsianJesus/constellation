@@ -48,10 +48,9 @@
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanSat));
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -70,10 +69,15 @@
             this.changeImageDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeFlyIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetAndUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveEveryPlotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.lblFName = new System.Windows.Forms.Label();
+            this.lblFID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -91,6 +95,8 @@
             chartArea2.AxisY.Maximum = 110000D;
             chartArea2.AxisY.Minimum = 95000D;
             chartArea2.Name = "ChartArea2";
+            chartArea3.AxisY.Maximum = 10D;
+            chartArea3.AxisY.Minimum = 0D;
             chartArea3.Name = "ChartArea3";
             chartArea4.AxisY.Maximum = 10D;
             chartArea4.AxisY.Minimum = 0D;
@@ -129,56 +135,50 @@
             series2.Name = "Pressure";
             series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
             series2.YValuesPerPoint = 2;
+            series3.BorderWidth = 2;
             series3.ChartArea = "ChartArea3";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Legend = "Legend1";
-            series3.Name = "MagField";
+            series3.Name = "Speed";
             series4.BorderWidth = 2;
             series4.ChartArea = "ChartArea5";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             series4.Legend = "Legend1";
             series4.Name = "Height";
+            series5.BorderWidth = 2;
             series5.ChartArea = "ChartArea6";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Range;
-            series5.Color = System.Drawing.Color.WhiteSmoke;
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Color = System.Drawing.Color.Black;
             series5.Legend = "Legend1";
-            series5.Name = "Illimunation";
-            series5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            series5.YValuesPerPoint = 2;
+            series5.Name = "Battery Voltage";
+            series5.YValuesPerPoint = 4;
             series6.BorderWidth = 2;
             series6.ChartArea = "ChartArea7";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Color = System.Drawing.Color.Black;
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series6.Color = System.Drawing.Color.Maroon;
             series6.Legend = "Legend1";
-            series6.Name = "Battery Voltage";
-            series6.YValuesPerPoint = 4;
-            series7.BorderWidth = 2;
-            series7.ChartArea = "ChartArea7";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series7.Color = System.Drawing.Color.Maroon;
+            series6.Name = "Charge";
+            series7.ChartArea = "ChartArea8";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             series7.Legend = "Legend1";
-            series7.Name = "Charge";
-            series8.ChartArea = "ChartArea8";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            series7.Name = "Humidity";
+            series8.ChartArea = "ChartArea4";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Color = System.Drawing.Color.Red;
             series8.Legend = "Legend1";
-            series8.Name = "Humidity";
+            series8.Name = "CO";
             series9.ChartArea = "ChartArea4";
             series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.Red;
+            series9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             series9.Legend = "Legend1";
-            series9.Name = "CO";
+            series9.Name = "NH3";
             series10.ChartArea = "ChartArea4";
             series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             series10.Legend = "Legend1";
-            series10.Name = "NH3";
-            series11.ChartArea = "ChartArea4";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            series11.Legend = "Legend1";
-            series11.Name = "NO2";
+            series10.Name = "NO2";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
@@ -189,11 +189,10 @@
             this.chart1.Series.Add(series8);
             this.chart1.Series.Add(series9);
             this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
             this.chart1.Size = new System.Drawing.Size(664, 689);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "plots";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click_1);
+            this.chart1.DoubleClick += new System.EventHandler(this.chart1_Click_1);
             // 
             // progressBar1
             // 
@@ -210,40 +209,39 @@
             this.gpsZ.BackColor = System.Drawing.SystemColors.Menu;
             this.gpsZ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gpsZ.Enabled = false;
-            this.gpsZ.Location = new System.Drawing.Point(1123, 697);
+            this.gpsZ.Location = new System.Drawing.Point(1178, 697);
             this.gpsZ.Name = "gpsZ";
             this.gpsZ.ReadOnly = true;
-            this.gpsZ.Size = new System.Drawing.Size(115, 20);
+            this.gpsZ.Size = new System.Drawing.Size(123, 20);
             this.gpsZ.TabIndex = 5;
-            this.gpsZ.Text = "2.61252";
             // 
             // gpsX
             // 
             this.gpsX.BackColor = System.Drawing.SystemColors.Menu;
             this.gpsX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gpsX.Enabled = false;
-            this.gpsX.Location = new System.Drawing.Point(682, 697);
+            this.gpsX.Location = new System.Drawing.Point(776, 697);
             this.gpsX.Name = "gpsX";
             this.gpsX.ReadOnly = true;
             this.gpsX.Size = new System.Drawing.Size(157, 20);
             this.gpsX.TabIndex = 6;
-            this.gpsX.Text = "40.425414";
             this.gpsX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gpsX.TextChanged += new System.EventHandler(this.gpsX_TextChanged);
             // 
             // gpsY
             // 
             this.gpsY.BackColor = System.Drawing.SystemColors.Menu;
             this.gpsY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.gpsY.Enabled = false;
-            this.gpsY.Location = new System.Drawing.Point(868, 697);
+            this.gpsY.Location = new System.Drawing.Point(946, 697);
             this.gpsY.Name = "gpsY";
             this.gpsY.ReadOnly = true;
-            this.gpsY.Size = new System.Drawing.Size(174, 20);
+            this.gpsY.Size = new System.Drawing.Size(182, 20);
             this.gpsY.TabIndex = 7;
-            this.gpsY.Text = "49.958641";
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // chart2
@@ -256,11 +254,11 @@
             this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(682, 28);
             this.chart2.Name = "chart2";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series12.Legend = "Legend1";
-            series12.Name = "Series";
-            this.chart2.Series.Add(series12);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Legend = "Legend1";
+            series11.Name = "Series";
+            this.chart2.Series.Add(series11);
             this.chart2.Size = new System.Drawing.Size(619, 210);
             this.chart2.TabIndex = 9;
             this.chart2.Text = "chart2";
@@ -301,9 +299,8 @@
             "",
             "Temperature",
             "Pressure",
-            "MagField",
+            "Speed",
             "Height",
-            "Illimunation",
             "Voltage",
             "Charge",
             "Humidity",
@@ -328,7 +325,7 @@
             this.analogClock1.EnableSec = true;
             this.analogClock1.FrameColor = System.Drawing.Color.DimGray;
             this.analogClock1.HourColor = System.Drawing.Color.DarkOliveGreen;
-            this.analogClock1.Location = new System.Drawing.Point(776, 346);
+            this.analogClock1.Location = new System.Drawing.Point(931, 357);
             this.analogClock1.Manual = true;
             this.analogClock1.MinuteHour = System.Drawing.Color.Snow;
             this.analogClock1.Name = "analogClock1";
@@ -355,7 +352,8 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeImageDirectoryToolStripMenuItem,
             this.changeFlyIDToolStripMenuItem,
-            this.updateToolStripMenuItem});
+            this.updateToolStripMenuItem,
+            this.saveEveryPlotToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -378,10 +376,34 @@
             // 
             // updateToolStripMenuItem
             // 
+            this.updateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem1,
+            this.resetAndUpdateToolStripMenuItem});
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Text = "Hurry up";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem1
+            // 
+            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
+            this.updateToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.updateToolStripMenuItem1.Text = "Update F5";
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
+            // 
+            // resetAndUpdateToolStripMenuItem
+            // 
+            this.resetAndUpdateToolStripMenuItem.Name = "resetAndUpdateToolStripMenuItem";
+            this.resetAndUpdateToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.resetAndUpdateToolStripMenuItem.Text = "Reset and update F12";
+            this.resetAndUpdateToolStripMenuItem.Click += new System.EventHandler(this.resetAndUpdateToolStripMenuItem_Click);
+            // 
+            // saveEveryPlotToolStripMenuItem
+            // 
+            this.saveEveryPlotToolStripMenuItem.Name = "saveEveryPlotToolStripMenuItem";
+            this.saveEveryPlotToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.saveEveryPlotToolStripMenuItem.Text = "Save every plot";
+            this.saveEveryPlotToolStripMenuItem.Click += new System.EventHandler(this.saveEveryPlotToolStripMenuItem_Click);
             // 
             // toolStripButton1
             // 
@@ -413,12 +435,32 @@
             this.toolStripButton3.Text = "Reset database configuration";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // lblFName
+            // 
+            this.lblFName.AutoSize = true;
+            this.lblFName.Location = new System.Drawing.Point(1175, 290);
+            this.lblFName.Name = "lblFName";
+            this.lblFName.Size = new System.Drawing.Size(61, 13);
+            this.lblFName.TabIndex = 16;
+            this.lblFName.Text = "Flight name";
+            // 
+            // lblFID
+            // 
+            this.lblFID.AutoSize = true;
+            this.lblFID.Location = new System.Drawing.Point(1116, 293);
+            this.lblFID.Name = "lblFID";
+            this.lblFID.Size = new System.Drawing.Size(43, 13);
+            this.lblFID.TabIndex = 17;
+            this.lblFID.Text = "Flight id";
+            // 
             // CanSat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1327, 729);
+            this.Controls.Add(this.lblFID);
+            this.Controls.Add(this.lblFName);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.analogClock1);
             this.Controls.Add(this.comboBox1);
@@ -431,10 +473,13 @@
             this.Controls.Add(this.gpsZ);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.chart1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CanSat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "                                                            ";
+            this.Text = "GSFDV";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CanSat_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CanSat_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -468,6 +513,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripMenuItem saveEveryPlotToolStripMenuItem;
+        private System.Windows.Forms.Label lblFName;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem resetAndUpdateToolStripMenuItem;
+        private System.Windows.Forms.Label lblFID;
     }
 }
 
