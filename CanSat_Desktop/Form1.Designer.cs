@@ -75,6 +75,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.tsbSF = new System.Windows.Forms.ToolStripButton();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.lblFName = new System.Windows.Forms.Label();
             this.lblFID = new System.Windows.Forms.Label();
@@ -241,6 +242,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -339,7 +341,8 @@
             this.toolStripDropDownButton1,
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.tsbSF});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1327, 25);
@@ -435,10 +438,21 @@
             this.toolStripButton3.Text = "Reset database configuration";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
+            // tsbSF
+            // 
+            this.tsbSF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSF.Image = ((System.Drawing.Image)(resources.GetObject("tsbSF.Image")));
+            this.tsbSF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSF.Name = "tsbSF";
+            this.tsbSF.Size = new System.Drawing.Size(76, 22);
+            this.tsbSF.Tag = "";
+            this.tsbSF.Text = "Show flights";
+            this.tsbSF.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
             // lblFName
             // 
             this.lblFName.AutoSize = true;
-            this.lblFName.Location = new System.Drawing.Point(1175, 290);
+            this.lblFName.Location = new System.Drawing.Point(1165, 293);
             this.lblFName.Name = "lblFName";
             this.lblFName.Size = new System.Drawing.Size(61, 13);
             this.lblFName.TabIndex = 16;
@@ -518,6 +532,7 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem resetAndUpdateToolStripMenuItem;
         private System.Windows.Forms.Label lblFID;
+        private System.Windows.Forms.ToolStripButton tsbSF;
     }
 }
 

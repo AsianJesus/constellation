@@ -69,6 +69,12 @@
       <DependentUpon>DBConfigure.cs</DependentUpon>
     </Compile>
     <Compile Include="DBControl.cs" />
+    <Compile Include="Flight List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Flight List.Designer.cs">
+      <DependentUpon>Flight List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DBConfigure.resx">
       <DependentUpon>DBConfigure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Flight List.resx">
+      <DependentUpon>Flight List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

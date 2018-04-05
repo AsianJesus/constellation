@@ -12,12 +12,36 @@ namespace CanSat_Desktop
 {
     public partial class ChDBCommands : Form
     {
-        private string comGetID, comGetInfo;
+        private string comGetID, comGetData,comGetFlights;
+        private string comGetIDDef, comGetDataDef, comGetFlightsDef;
         public ChDBCommands()
         {
             InitializeComponent();
         }
-
+        public string DefComID
+        {
+            set
+            {
+                tbID.Text = value;
+                comGetIDDef = value;
+            }
+        }
+        public string DefComFlights
+        {
+            set
+            {
+                tbFlights.Text = value;
+                comGetFlightsDef = value;
+            }
+        }
+        public string DefComData
+        {
+            set
+            {
+                tbData.Text = value;
+                comGetDataDef = value;
+            }
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -35,13 +59,14 @@ namespace CanSat_Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == "" && textBox1.Text == "")
+            if (tbData.Text == comGetDataDef && tbID.Text == comGetIDDef && tbFlights.Text == comGetFlightsDef)
             {
                 DialogResult = DialogResult.Cancel;
                 Close();
             }
-            comGetID = textBox2.Text;
-            comGetInfo = textBox1.Text;
+            comGetID = tbID.Text;
+            comGetData = tbData.Text;
+            comGetFlights = tbFlights.Text;
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -54,9 +79,13 @@ namespace CanSat_Desktop
         {
             get { return comGetID; }
         }
-        public string GetInfo
+        public string GetData
         {
-            get { return comGetInfo; }
+            get { return comGetData; }
+        }
+        public string GetFlights
+        {
+            get { return comGetFlights; }
         }
     }
 }

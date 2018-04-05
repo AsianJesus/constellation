@@ -19,9 +19,11 @@ namespace CanSat_Desktop
         Dictionary<string, string> mysqlCommands = new Dictionary<string,string>(){
             { "getID", "SELECT id,name FROM flies ORDER BY start DESC LIMIT 1;" },
             {"getInfo",
-                "SELECT packetID, temp, pressure, gx,gz,gy,height,hum,co2,nh3,no2,speed,voltage,batch,recTime, flyTime FROM data WHERE flyID = @id AND recTime > @lasttime ORDER BY packetID ;" }
+                "SELECT packetID, temp, pressure, gx,gz,gy,height,hum,co2,nh3,no2,speed,voltage,batch,recTime, flyTime FROM data WHERE flyID = @id AND recTime > @lasttime ORDER BY packetID ;"},
+            {"getFlights",
+                "SELECT id,name,start,end FROM flies;"}
         };
-        string mysqlcomGetInfo, mysqlcomGetID;
+        string comGetInfo, comGetID,comGetFlights;
         const string serverDef = "localhost", userDef = "root", passwDef = "", databaseDef = "cansat";
         string server, user, passw, database;
         double lastTime;
@@ -144,17 +146,37 @@ namespace CanSat_Desktop
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             ChDBCommands form = new ChDBCommands();
+            form.DefComData = comGetInfo;
+            form.DefComID = comGetID;
+            form.DefComFlights = comGetFlights;
             DialogResult result = form.ShowDialog(this);
             if(result == DialogResult.OK)
             {
-                if(form.GetID != "")
-                {
-                    SaveInReg(new Dictionary<string, string>() { { "comGetID", form.GetID } });
+                Dictionary<string, string> valuesForSave = new Dictionary<string, string>();
+                if(form.GetID != comGetID)
+                {                    
+                    comGetID = form.GetID;
+                    getFlyID();
+                    valuesForSave.Add("comGetID", comGetID);
                 }
-                if (form.GetInfo != "")
+                if (form.GetData != comGetInfo)
                 {
-                    SaveInReg(new Dictionary<string, string>() { { "comGetInfo", form.GetInfo } });
+                    comGetInfo = form.GetData;
+                    valuesForSave.Add("comGetInfo", comGetInfo);
                 }
+                if(form.GetFlights != comGetFlights)
+                {
+                    comGetFlights = form.GetFlights;
+                    valuesForSave.Add("comGetFlights", comGetFlights);
+                }
+                if (valuesForSave.Count != 0)
+                {
+                    getFlyID();
+                    pocketCount = 0;
+                    lastTime = 0;
+                    UpdateInfo();
+                }
+                SaveInReg(valuesForSave);
             }
         }
 
@@ -168,14 +190,16 @@ namespace CanSat_Desktop
                             { "passw", passwDef},
                             { "database",databaseDef},
                             {"comGetInfo",mysqlCommands["getInfo"] },
-                            {"comGetID", mysqlCommands["getID"] }
+                            {"comGetID", mysqlCommands["getID"] },
+                            {"comGetFlights",mysqlCommands["getFlights"] }
                         });
             server = serverDef;
             user = userDef;
             passw = passwDef;
             database = databaseDef;
-            mysqlcomGetID = mysqlCommands["getInfo"];
-            mysqlcomGetInfo = mysqlCommands["getID"];
+            comGetID = mysqlCommands["getInfo"];
+            comGetInfo = mysqlCommands["getID"];
+            comGetFlights = mysqlCommands["getFlights"];
             InitializeConnection();
         }
         private void SaveInReg(Dictionary<string,string> pairs)
@@ -232,6 +256,31 @@ namespace CanSat_Desktop
                 resetAndUpdateToolStripMenuItem_Click(sender, e);
         }
 
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            Flight_List flist = new Flight_List();
+            flist.Show(this);
+            try
+            {
+                MessageBox.Show("We are reading");
+                var result = db.ExetuceQuery(new MySqlCommand(comGetFlights));
+                if (result.Count == 0)
+                {
+                    MessageBox.Show("Empty set");
+                    return;
+                }
+                flist.IDs.Lines = result[0].ToArray();
+                flist.Names.Lines = result[1].ToArray();
+                flist.Starts.Lines = result[2].ToArray();
+                flist.Ends.Lines = result[3].ToArray();
+               
+            }
+            catch
+            {
+                MessageBox.Show("Error appeared on loading");
+            }
+        }
+
         private string GetFromReg(string key, string def = "NULL")
         {
             return Registry.GetValue(@"HKEY_CURRENT_USER\SOFTWARE\Cansat_desktop", key, def).ToString();
@@ -243,24 +292,13 @@ namespace CanSat_Desktop
         }
         private void LoadInfo()
         {
-            server = GetFromReg("server", "");
-            if (server == "")
-                server = serverDef;
-            passw = GetFromReg("passw", "NULL");
-            if (passw == "")
-                passw = passwDef;
-            user = GetFromReg("uid", "");
-            if (user == "")
-                user = userDef;
-            database = GetFromReg("database", "");
-            if (database == "")
-                database = databaseDef;
-            mysqlcomGetID = GetFromReg("comGetID", "");
-            if (mysqlcomGetID == "")
-                mysqlcomGetID = mysqlCommands["getID"];
-            mysqlcomGetInfo = GetFromReg("comGetInfo", "");
-            if (mysqlcomGetInfo == "")
-                mysqlcomGetInfo = mysqlCommands["getInfo"];
+            server = GetFromReg("server", serverDef);
+            passw = GetFromReg("passw", passwDef);
+            user = GetFromReg("uid", userDef);
+            database = GetFromReg("database", databaseDef);
+            comGetID = GetFromReg("comGetID", mysqlCommands["getID"]);
+            comGetInfo = GetFromReg("comGetInfo", mysqlCommands["getInfo"]);
+            comGetFlights = GetFromReg("comGetFlights", mysqlCommands["getFlights"]);
         }
         private void InitializeConnection()
         { 
@@ -294,7 +332,7 @@ namespace CanSat_Desktop
         }
         private void getFlyID()
         {
-            MySqlCommand comm = new MySqlCommand(mysqlcomGetID);
+            MySqlCommand comm = new MySqlCommand(comGetID);
             flyID = -1;
             try
             {
@@ -335,6 +373,8 @@ namespace CanSat_Desktop
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (flyID == -1)
+                return;
             UpdateInfo();
         }
 
@@ -397,7 +437,7 @@ NO2
         }
         private void UpdateInfo()
         {
-            MySqlCommand comm = new MySqlCommand(mysqlcomGetInfo);
+            MySqlCommand comm = new MySqlCommand(comGetInfo);
             comm.Parameters.AddWithValue("@id", flyID);
             comm.Parameters.AddWithValue("@lasttime", lastTime);
             try

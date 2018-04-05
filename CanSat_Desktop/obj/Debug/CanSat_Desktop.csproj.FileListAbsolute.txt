@@ -15,3 +15,4 @@ C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Deskt
 C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.InputID.resources
 C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.ChDBCommands.resources
 C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.DBConfigure.resources
+C:\Users\fruit\Documents\Visual Studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Debug\CanSat_Desktop.Flight_List.resources
