@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_q3mOUFNBEei3eI18MZU1xg" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_xAMkQFNBEei3eI18MZU1xg" name="XBee Interface" visibility="public">
+    <ownedAttribute xmi:id="_5PVTcFNCEei3eI18MZU1xg" name="port" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5PV6gFNCEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5PV6gVNCEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_6yOCgFNCEei3eI18MZU1xg" name="baudRate" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6yOCgVNCEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6yOCglNCEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_AMDN8FNDEei3eI18MZU1xg" name="open"/>
+    <ownedOperation xmi:id="_BbLTgFNDEei3eI18MZU1xg" name="close"/>
+    <ownedOperation xmi:id="_Cqb78FNDEei3eI18MZU1xg" name="isClosed()"/>
+    <ownedOperation xmi:id="_GvSRcFNDEei3eI18MZU1xg" name="send(msg : string)"/>
+    <ownedOperation xmi:id="_IXp9cFNDEei3eI18MZU1xg" name="read() : string"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zAzxIFNBEei3eI18MZU1xg" name="BasicIO" visibility="public">
+    <generalization xmi:id="_ZSMzAFNDEei3eI18MZU1xg" general="_PCZ-MFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_33Rw1FNBEei3eI18MZU1xg" name="XBee" visibility="private" type="_xAMkQFNBEei3eI18MZU1xg" association="_33Rw0FNBEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_33Rw1VNBEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_33Rw1lNBEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_tdpRQFNGEei3eI18MZU1xg" name="flag" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tdp4UFNGEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tdp4UVNGEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_0oegQFNGEei3eI18MZU1xg" name="output" visibility="private" type="_7jw-wFNDEei3eI18MZU1xg" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0oegQVNGEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0oegQlNGEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_IHMiwFNHEei3eI18MZU1xg" name="errorLog" visibility="private" isStatic="true" type="_7jw-wFNDEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IHMiwVNHEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IHMiwlNHEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_ovuQ8FNDEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_pxG1cFNDEei3eI18MZU1xg" name="stop"/>
+    <ownedOperation xmi:id="_r-jkcFNDEei3eI18MZU1xg" name="operate" visibility="private"/>
+    <ownedOperation xmi:id="_SmRwwFNHEei3eI18MZU1xg" name="read" visibility="private"/>
+    <ownedOperation xmi:id="_UC5fwFNHEei3eI18MZU1xg" name="write" visibility="private"/>
+    <ownedOperation xmi:id="_V6hIsFNHEei3eI18MZU1xg" name="handler" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_33Rw0FNBEei3eI18MZU1xg" memberEnd="_33Rw0VNBEei3eI18MZU1xg _33Rw1FNBEei3eI18MZU1xg" navigableOwnedEnd="_33Rw0VNBEei3eI18MZU1xg">
+    <ownedEnd xmi:id="_33Rw0VNBEei3eI18MZU1xg" name="" type="_zAzxIFNBEei3eI18MZU1xg" association="_33Rw0FNBEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_33Rw0lNBEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_33Rw01NBEei3eI18MZU1xg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_otn0oFNCEei3eI18MZU1xg" name="object [*]{unique}"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_p0sKYFNCEei3eI18MZU1xg" name="object [*] [*]{unique}"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sBIz0FNCEei3eI18MZU1xg" name="object"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_PCZ-MFNDEei3eI18MZU1xg" name="Thread" visibility="package" isAbstract="true">
+    <ownedOperation xmi:id="_SYABAFNDEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_TQnEAFNDEei3eI18MZU1xg" name="run"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0xYE8FNDEei3eI18MZU1xg" name="DataHandler" visibility="public">
+    <generalization xmi:id="__VC4AFNDEei3eI18MZU1xg" general="_5aEuYFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_AGMBFFNEEei3eI18MZU1xg" name="input" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AGMBFVNEEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AGMBFlNEEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_I_PFYFNEEei3eI18MZU1xg" name="processAlgorithm" visibility="private" type="_o2tX0FNFEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_I_PscFNEEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_I_PscVNEEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_TA8a4FNEEei3eI18MZU1xg" name="flag" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TA9B8FNEEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TA9B8VNEEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_mmYJYFNEEei3eI18MZU1xg" name="output" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mmYwcFNEEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mmYwcVNEEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qQ1B4FNEEei3eI18MZU1xg" name="errorLog" visibility="private" isStatic="true" type="_7jw-wFNDEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qQ1B4VNEEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qQ1B4lNEEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_CuWCMVNcEei1bpdB11kHrA" name="sessions" visibility="private" type="_Bg4JgFNcEei1bpdB11kHrA" association="_CuWCMFNcEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuWCMlNcEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuWCM1NcEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Px0McFNEEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_QuAu8FNEEei3eI18MZU1xg" name="stop"/>
+    <ownedOperation xmi:id="_XDbY4FNEEei3eI18MZU1xg" name="defaultDataProcessing" visibility="private" isStatic="true">
+      <ownedParameter xmi:id="_llbNQFNFEei3eI18MZU1xg" name="raw">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_mFJPIFNFEei3eI18MZU1xg" type="_As_F4FNFEei3eI18MZU1xg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_5HOOYFNEEei3eI18MZU1xg" name="run" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5aEuYFNDEei3eI18MZU1xg" name="Thread" visibility="package" isAbstract="true">
+    <ownedOperation xmi:id="_5aEuYVNDEei3eI18MZU1xg" name="start" isAbstract="true"/>
+    <ownedOperation xmi:id="_5aEuYlNDEei3eI18MZU1xg" name="run" isAbstract="true"/>
+    <ownedOperation xmi:id="_nMuVsFNaEei1bpdB11kHrA" name="join"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7jw-wFNDEei3eI18MZU1xg" name="Queue" visibility="package">
+    <ownedAttribute xmi:id="_7jw-wVNDEei3eI18MZU1xg" name="max_size" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7jw-wlNDEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7jw-w1NDEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_7jw-xFNDEei3eI18MZU1xg" name="items" visibility="private" type="_sBIz0FNCEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7jw-xVNDEei3eI18MZU1xg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7jw-xlNDEei3eI18MZU1xg" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_7jw-x1NDEei3eI18MZU1xg" name="get">
+      <ownedParameter xmi:id="_7jw-yFNDEei3eI18MZU1xg" type="_sBIz0FNCEei3eI18MZU1xg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7jw-yVNDEei3eI18MZU1xg" name="put">
+      <ownedParameter xmi:id="_7jw-ylNDEei3eI18MZU1xg" name="item" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7jw-y1NDEei3eI18MZU1xg" name="isEmpty">
+      <ownedParameter xmi:id="_7jw-zFNDEei3eI18MZU1xg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_XWPQIFUFEeiBRPTG19N31g" name="Operation_4"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MqJ38FNEEei3eI18MZU1xg" name="function"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_U5OyMFNEEei3eI18MZU1xg" name="Flag"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kQvuwFNEEei3eI18MZU1xg" name="Queue [1]{unique}"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vZSJcFNEEei3eI18MZU1xg" memberEnd="_vZSJcVNEEei3eI18MZU1xg _vZSJdFNEEei3eI18MZU1xg" navigableOwnedEnd="_vZSJdFNEEei3eI18MZU1xg">
+    <ownedEnd xmi:id="_vZSJdFNEEei3eI18MZU1xg" name="dataHandlers" type="_0xYE8FNDEei3eI18MZU1xg" association="_vZSJcFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vZSJdVNEEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vZSJdlNEEei3eI18MZU1xg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_vZSJcVNEEei3eI18MZU1xg" name="queues" type="_7jw-wFNDEei3eI18MZU1xg" aggregation="composite" association="_vZSJcFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vZSJclNEEei3eI18MZU1xg" value="3"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vZSJc1NEEei3eI18MZU1xg" value="3"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_As_F4FNFEei3eI18MZU1xg" name="Packet" visibility="public">
+    <ownedAttribute xmi:id="_B4l9YFNFEei3eI18MZU1xg" name="ID" visibility="private" isID="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_B4l9YVNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_B4l9YlNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_I5PVoFNFEei3eI18MZU1xg" name="flyTime" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q2vXsFNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q2vXsVNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_KXnYIFNFEei3eI18MZU1xg" name="recTime" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_R2XosFNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_R2XosVNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_KcYjYFNFEei3eI18MZU1xg" name="temperature" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_S07isFNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_S07isVNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_KiGw4FNFEei3eI18MZU1xg" name="pressure" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UkZVMFNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UkZVMVNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_KmOb4FNFEei3eI18MZU1xg" name="height" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WJd1kFNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WJd1kVNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Kqpo4FNFEei3eI18MZU1xg" name="speed" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YEKnsFNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YEKnsVNFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_PeizsFNbEei1bpdB11kHrA" name="flyID" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PeizsVNbEei1bpdB11kHrA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PejawFNbEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_dPmx0FNFEei3eI18MZU1xg" name="getInfo"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ncQMAFNFEei3eI18MZU1xg" name="function(string) : Packet "/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_o2tX0FNFEei3eI18MZU1xg" name="function(string,int)->Packet  "/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_04nqgFNFEei3eI18MZU1xg" name="Distributor" visibility="public">
+    <generalization xmi:id="_9096cFNFEei3eI18MZU1xg" general="_5JAhoFNFEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_BPrt0FNGEei3eI18MZU1xg" name="input" visibility="private" type="_7jw-wFNDEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BPrt0VNGEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BPrt0lNGEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_DU9_UFNGEei3eI18MZU1xg" name="outputs" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DU9_UVNGEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DU9_UlNGEei3eI18MZU1xg" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_7iN_QFNGEei3eI18MZU1xg" name="isWorking" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7iN_QVNGEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7iN_QlNGEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_EYjGwFNHEei3eI18MZU1xg" name="errorLog" visibility="private" isStatic="true">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EYjGwVNHEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EYjGwlNHEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_MkD6MFNIEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_NZUHMFNIEei3eI18MZU1xg" name="stop"/>
+    <ownedOperation xmi:id="_ONk1sFNIEei3eI18MZU1xg" name="operate" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_36b1sFNFEei3eI18MZU1xg" name="Queue" visibility="package">
+    <ownedAttribute xmi:id="_36b1sVNFEei3eI18MZU1xg" name="max_size" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_36b1slNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_36b1s1NFEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_36b1tFNFEei3eI18MZU1xg" name="items" visibility="private" type="_sBIz0FNCEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_36b1tVNFEei3eI18MZU1xg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_36b1tlNFEei3eI18MZU1xg" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_36b1t1NFEei3eI18MZU1xg" name="get">
+      <ownedParameter xmi:id="_36b1uFNFEei3eI18MZU1xg" type="_sBIz0FNCEei3eI18MZU1xg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_36b1uVNFEei3eI18MZU1xg" name="put">
+      <ownedParameter xmi:id="_36b1ulNFEei3eI18MZU1xg" name="item" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_36b1u1NFEei3eI18MZU1xg" name="isEmpty">
+      <ownedParameter xmi:id="_36b1vFNFEei3eI18MZU1xg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5JAhoFNFEei3eI18MZU1xg" name="Thread" visibility="package" isAbstract="true">
+    <ownedOperation xmi:id="_5JAhoVNFEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_5JAholNFEei3eI18MZU1xg" name="run"/>
+    <ownedOperation xmi:id="_5JAho1NFEei3eI18MZU1xg" name="break"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-ToMYFNFEei3eI18MZU1xg" memberEnd="_-ToMYVNFEei3eI18MZU1xg _-ToMZFNFEei3eI18MZU1xg" navigableOwnedEnd="_-ToMYVNFEei3eI18MZU1xg _-ToMZFNFEei3eI18MZU1xg">
+    <ownedEnd xmi:id="_-ToMYVNFEei3eI18MZU1xg" name="queues" type="_36b1sFNFEei3eI18MZU1xg" association="_-ToMYFNFEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-ToMYlNFEei3eI18MZU1xg" value="3"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-ToMY1NFEei3eI18MZU1xg" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_-ToMZFNFEei3eI18MZU1xg" name="distributors" type="_04nqgFNFEei3eI18MZU1xg" association="_-ToMYFNFEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-ToMZVNFEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-ToMZlNFEei3eI18MZU1xg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-85ZkFNKEei3eI18MZU1xg" name="Main">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_jc3WkFNLEei3eI18MZU1xg" client="_-85ZkFNKEei3eI18MZU1xg" supplier="_bqIaEFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oF4JEFNLEei3eI18MZU1xg" client="_-85ZkFNKEei3eI18MZU1xg" supplier="_FhHUgFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_qIC1IFNLEei3eI18MZU1xg" client="_-85ZkFNKEei3eI18MZU1xg" supplier="_TQyJgFNLEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FhHUgFNLEei3eI18MZU1xg" name="Distributor">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_nwDqEFNLEei3eI18MZU1xg" client="_FhHUgFNLEei3eI18MZU1xg" supplier="_XTfxAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_0ISyEFNLEei3eI18MZU1xg" client="_FhHUgFNLEei3eI18MZU1xg" supplier="_pNIFAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_BVLDEFNMEei3eI18MZU1xg" client="_FhHUgFNLEei3eI18MZU1xg" supplier="_NGfxgFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_BxtOEFNMEei3eI18MZU1xg" client="_FhHUgFNLEei3eI18MZU1xg" supplier="_LaFTAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_NjVpEFNMEei3eI18MZU1xg" client="_FhHUgFNLEei3eI18MZU1xg" supplier="_MNpogFNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_OaHgEFNMEei3eI18MZU1xg" client="_FhHUgFNLEei3eI18MZU1xg" supplier="_KoK4cFNMEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LaFTAFNLEei3eI18MZU1xg" name="DatabaseWork">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_24m9kFNLEei3eI18MZU1xg" client="_LaFTAFNLEei3eI18MZU1xg" supplier="_11degFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_VqcTEFNMEei3eI18MZU1xg" client="_LaFTAFNLEei3eI18MZU1xg" supplier="_Qk4HcFNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_WCiqAFNMEei3eI18MZU1xg" client="_LaFTAFNLEei3eI18MZU1xg" supplier="_Q1OQkFNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_YJcFEFNMEei3eI18MZU1xg" client="_LaFTAFNLEei3eI18MZU1xg" supplier="_pNIFAFNLEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_NGfxgFNLEei3eI18MZU1xg" name="FileIO">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_N6rLAFNMEei3eI18MZU1xg" client="_NGfxgFNLEei3eI18MZU1xg" supplier="_MNpogFNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_Ot9CEFNMEei3eI18MZU1xg" client="_NGfxgFNLEei3eI18MZU1xg" supplier="_KoK4cFNMEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_TQyJgFNLEei3eI18MZU1xg" name="Processing">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_nKNyEFNLEei3eI18MZU1xg" client="_TQyJgFNLEei3eI18MZU1xg" supplier="_XTfxAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_zy7mEFNLEei3eI18MZU1xg" client="_TQyJgFNLEei3eI18MZU1xg" supplier="_pNIFAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_FyJksFNMEei3eI18MZU1xg" client="_TQyJgFNLEei3eI18MZU1xg" supplier="_EK-LgFNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_GHC2oFNMEei3eI18MZU1xg" client="_TQyJgFNLEei3eI18MZU1xg" supplier="_C6Z7gFNMEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_XTfxAFNLEei3eI18MZU1xg" name="Exceptions"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_bqIaEFNLEei3eI18MZU1xg" name="BasicIO">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_iC_ZkFNLEei3eI18MZU1xg" client="_bqIaEFNLEei3eI18MZU1xg" supplier="_f-lR0FNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ibkRoFNLEei3eI18MZU1xg" client="_bqIaEFNLEei3eI18MZU1xg" supplier="_evkhAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_mX3IEFNLEei3eI18MZU1xg" client="_bqIaEFNLEei3eI18MZU1xg" supplier="_XTfxAFNLEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_IcpcEFNMEei3eI18MZU1xg" client="_bqIaEFNLEei3eI18MZU1xg" supplier="_G2sx8FNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_hmhqkFNMEei3eI18MZU1xg" client="_bqIaEFNLEei3eI18MZU1xg" supplier="_d4ZL8FNMEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_evkhAFNLEei3eI18MZU1xg" name="Threading"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_f-lR0FNLEei3eI18MZU1xg" name="XBee"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pNIFAFNLEei3eI18MZU1xg" name="Exceptions">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_U1CVEFNMEei3eI18MZU1xg" client="_pNIFAFNLEei3eI18MZU1xg" supplier="_Q1OQkFNMEei3eI18MZU1xg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_VLOAcFNMEei3eI18MZU1xg" client="_pNIFAFNLEei3eI18MZU1xg" supplier="_Qk4HcFNMEei3eI18MZU1xg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_11degFNLEei3eI18MZU1xg" name="mysql"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_C6Z7gFNMEei3eI18MZU1xg" name="threading"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_EK-LgFNMEei3eI18MZU1xg" name="queue"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_G2sx8FNMEei3eI18MZU1xg" name="queue"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_KoK4cFNMEei3eI18MZU1xg" name="queue"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_MNpogFNMEei3eI18MZU1xg" name="threading"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Qk4HcFNMEei3eI18MZU1xg" name="queue"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Q1OQkFNMEei3eI18MZU1xg" name="threading"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_d4ZL8FNMEei3eI18MZU1xg" name="Exceptions"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QwkkoFNNEei3eI18MZU1xg" name="DBInterface" visibility="public">
+    <ownedAttribute xmi:id="_3C8TYFNNEei3eI18MZU1xg" name="connInfo" visibility="private" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3C86cFNNEei3eI18MZU1xg" value="4"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3C86cVNNEei3eI18MZU1xg" value="4"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_5vNsYFNNEei3eI18MZU1xg" name="connection" visibility="private" type="_9CAS0FNNEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5vOTcFNNEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5vOTcVNNEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_-Ign4FNNEei3eI18MZU1xg" name="open"/>
+    <ownedOperation xmi:id="__VQu4FNNEei3eI18MZU1xg" name="close"/>
+    <ownedOperation xmi:id="_AAmK4FNOEei3eI18MZU1xg" name="execute">
+      <ownedParameter xmi:id="_DGEHAFNOEei3eI18MZU1xg" name="com" type="_UxMzEFSuEeiU6oyLVNrahg"/>
+      <ownedParameter xmi:id="_DGEHAVNOEei3eI18MZU1xg" name="flush">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HDzH4FNOEei3eI18MZU1xg" name="isOpen">
+      <ownedParameter xmi:id="_IUjlIFNOEei3eI18MZU1xg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SpspcFNNEei3eI18MZU1xg" name="DatabaseWorker" visibility="public">
+    <generalization xmi:id="_fgXkcFNOEei3eI18MZU1xg" general="_PCZ-MFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_K8vvYFNOEei3eI18MZU1xg" name="connection" visibility="private" type="_QwkkoFNNEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_K8vvYVNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_K8vvYlNOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_PC0M4FNOEei3eI18MZU1xg" name="isOperating" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PC0M4VNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PC0M4lNOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_TlVV0FNOEei3eI18MZU1xg" name="input" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TlV84FNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TlV84VNOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_WezdUFNOEei3eI18MZU1xg" name="errorLog" visibility="private" isStatic="true">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_We0EYFNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_We0EYVNOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_ZmtCYFNOEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_aTG1YFNOEei3eI18MZU1xg" name="stop"/>
+    <ownedOperation xmi:id="_a8Yb4FNOEei3eI18MZU1xg" name="handle" visibility="private"/>
+    <ownedOperation xmi:id="_K02MEFNYEei1bpdB11kHrA" name="insert" visibility="private">
+      <ownedParameter xmi:id="_OlArAFNYEei1bpdB11kHrA" name="x" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_PSWSIFNYEei1bpdB11kHrA" name="get" visibility="private">
+      <ownedParameter xmi:id="_UtQboFNYEei1bpdB11kHrA" type="_sBIz0FNCEei3eI18MZU1xg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_a2N-8FNNEei3eI18MZU1xg" name="mysql"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_nEYk8FNNEei3eI18MZU1xg" name="xbee"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9CAS0FNNEei3eI18MZU1xg" name="MYSQLConnection"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_hdaf8FNOEei3eI18MZU1xg" memberEnd="_hdaf8VNOEei3eI18MZU1xg _hdaf9FNOEei3eI18MZU1xg" navigableOwnedEnd="_hdaf9FNOEei3eI18MZU1xg">
+    <ownedEnd xmi:id="_hdaf8VNOEei3eI18MZU1xg" name="queues" type="_36b1sFNFEei3eI18MZU1xg" association="_hdaf8FNOEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hdaf8lNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hdaf81NOEei3eI18MZU1xg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_hdaf9FNOEei3eI18MZU1xg" name="databaseWorkers" type="_SpspcFNNEei3eI18MZU1xg" association="_hdaf8FNOEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hdaf9VNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hdaf9lNOEei3eI18MZU1xg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xu3VMFNOEei3eI18MZU1xg" name="Queue" visibility="package">
+    <ownedAttribute xmi:id="_xu3VMVNOEei3eI18MZU1xg" name="max_size" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xu3VMlNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xu3VM1NOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xu3VNFNOEei3eI18MZU1xg" name="items" visibility="private" type="_sBIz0FNCEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xu3VNVNOEei3eI18MZU1xg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xu3VNlNOEei3eI18MZU1xg" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_xu3VN1NOEei3eI18MZU1xg" name="get">
+      <ownedParameter xmi:id="_xu3VOFNOEei3eI18MZU1xg" type="_sBIz0FNCEei3eI18MZU1xg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xu3VOVNOEei3eI18MZU1xg" name="put">
+      <ownedParameter xmi:id="_xu3VOlNOEei3eI18MZU1xg" name="item" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xu3VO1NOEei3eI18MZU1xg" name="isEmpty">
+      <ownedParameter xmi:id="_xu3VPFNOEei3eI18MZU1xg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xu5KYFNOEei3eI18MZU1xg" name="FileIO" visibility="public">
+    <generalization xmi:id="_xu5KYVNOEei3eI18MZU1xg" general="_xu6_kFNOEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_xu5KZVNOEei3eI18MZU1xg" name="flag" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xu5KZlNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xu5KZ1NOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xu5KaFNOEei3eI18MZU1xg" name="input" visibility="private" type="_xu3VMFNOEei3eI18MZU1xg" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xu5KaVNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xu5KalNOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xu5Ka1NOEei3eI18MZU1xg" name="errorLog" visibility="private" isStatic="true" type="_xu3VMFNOEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xu5KbFNOEei3eI18MZU1xg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xu5KbVNOEei3eI18MZU1xg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_xu5KblNOEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_xu5Kb1NOEei3eI18MZU1xg" name="stop"/>
+    <ownedOperation xmi:id="_xu5KcFNOEei3eI18MZU1xg" name="operate" visibility="private"/>
+    <ownedOperation xmi:id="_xu5KcVNOEei3eI18MZU1xg" name="read" visibility="private"/>
+    <ownedOperation xmi:id="_xu5KclNOEei3eI18MZU1xg" name="write" visibility="private"/>
+    <ownedOperation xmi:id="_xu5Kc1NOEei3eI18MZU1xg" name="handler" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xu6_kFNOEei3eI18MZU1xg" name="Thread" visibility="package" isAbstract="true">
+    <ownedOperation xmi:id="_xu6_kVNOEei3eI18MZU1xg" name="start"/>
+    <ownedOperation xmi:id="_xu6_klNOEei3eI18MZU1xg" name="run"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_POW4EFNaEei1bpdB11kHrA" memberEnd="_POW4EVNaEei1bpdB11kHrA _POW4FFNaEei1bpdB11kHrA" navigableOwnedEnd="_POW4FFNaEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_POW4EVNaEei1bpdB11kHrA" name="queues" type="_xu3VMFNOEei3eI18MZU1xg" association="_POW4EFNaEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_POW4ElNaEei1bpdB11kHrA" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_POW4E1NaEei1bpdB11kHrA" value="2"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_POW4FFNaEei1bpdB11kHrA" name="fileIOs" type="_xu5KYFNOEei3eI18MZU1xg" aggregation="composite" association="_POW4EFNaEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_POW4FVNaEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_POW4FlNaEei1bpdB11kHrA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_fQyZ4FNaEei1bpdB11kHrA" name="Flag" visibility="public">
+    <ownedAttribute xmi:id="_SwQmoFNcEei1bpdB11kHrA" name="state" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SwQmoVNcEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SwQmolNcEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_YN_aoFNcEei1bpdB11kHrA" name="getState">
+      <ownedParameter xmi:id="_btVPUFNcEei1bpdB11kHrA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZSJEFNcEei1bpdB11kHrA" name="setState">
+      <ownedParameter xmi:id="_a0gJ4FNcEei1bpdB11kHrA" name="state">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gT-VMFNaEei1bpdB11kHrA" name="CUI" visibility="public">
+    <generalization xmi:id="_KuRtMFNcEei1bpdB11kHrA" general="_5aEuYFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_38-m0VNaEei1bpdB11kHrA" name="sessions" visibility="private" type="_z4onoFNaEei1bpdB11kHrA" association="_38-m0FNaEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_38-m0lNaEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_38-m01NaEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_j5p7EFNdEei1bpdB11kHrA" name="commandList" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j5p7EVNdEei1bpdB11kHrA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j5p7ElNdEei1bpdB11kHrA" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_bCfGEFNdEei1bpdB11kHrA" name="start"/>
+    <ownedOperation xmi:id="_cOtBkFNdEei1bpdB11kHrA" name="stop"/>
+    <ownedOperation xmi:id="_c8yPkFNdEei1bpdB11kHrA" name="join"/>
+    <ownedOperation xmi:id="_ep4DgFNdEei1bpdB11kHrA" name="waitCommand"/>
+    <ownedOperation xmi:id="_gYDckFNdEei1bpdB11kHrA" name="handleCommand" visibility="private">
+      <ownedParameter xmi:id="_7MZo0FNdEei1bpdB11kHrA" name="com">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hEHYsFNaEei1bpdB11kHrA" name="ThreadController" visibility="private">
+    <ownedAttribute xmi:id="_ewKuMVNcEei1bpdB11kHrA" name="curStates" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg" association="_ewKuMFNcEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ewKuMlNcEei1bpdB11kHrA" value="4"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ewKuM1NcEei1bpdB11kHrA" value="4"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_PAEdEFNdEei1bpdB11kHrA" name="savedStates" visibility="private" type="_U5OyMFNEEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PAFEIFNdEei1bpdB11kHrA" value="4"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PAFEIVNdEei1bpdB11kHrA" value="4"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_4GnZEFNcEei1bpdB11kHrA" name="stopAll"/>
+    <ownedOperation xmi:id="_DB2XkFNdEei1bpdB11kHrA" name="stop">
+      <ownedParameter xmi:id="_HNxlcFNdEei1bpdB11kHrA" name="proc" type="_6L-jEFNcEei1bpdB11kHrA"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HpG2kFNdEei1bpdB11kHrA" name="startAll"/>
+    <ownedOperation xmi:id="_IdEDEFNdEei1bpdB11kHrA" name="start(proc : Threads)"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_z4onoFNaEei1bpdB11kHrA" name="Session" visibility="public">
+    <ownedAttribute xmi:id="_9T0vsFNaEei1bpdB11kHrA" name="id" visibility="private" isID="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9T0vsVNaEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9T0vslNaEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Cu87oFNbEei1bpdB11kHrA" name="start"/>
+    <ownedOperation xmi:id="_EGA1MFNbEei1bpdB11kHrA" name="end"/>
+    <ownedOperation xmi:id="_0fxDoFNbEei1bpdB11kHrA" name="setID">
+      <ownedParameter xmi:id="_418ZsFNbEei1bpdB11kHrA" name="id">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_2IXZIFNbEei1bpdB11kHrA" name="getID">
+      <ownedParameter xmi:id="_3P0wcFNbEei1bpdB11kHrA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_38-m0FNaEei1bpdB11kHrA" memberEnd="_38-m0VNaEei1bpdB11kHrA _38-m1FNaEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_38-m1FNaEei1bpdB11kHrA" name="cUIs" type="_gT-VMFNaEei1bpdB11kHrA" association="_38-m0FNaEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_38-m1VNaEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_38-m1lNaEei1bpdB11kHrA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Q7nOoFNbEei1bpdB11kHrA" name="int [1] {id}"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Bg4JgFNcEei1bpdB11kHrA" name="Session" visibility="public">
+    <ownedAttribute xmi:id="_Bg4JgVNcEei1bpdB11kHrA" name="id" visibility="private" isID="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Bg4JglNcEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Bg4Jg1NcEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_Bg4JhFNcEei1bpdB11kHrA" name="start"/>
+    <ownedOperation xmi:id="_Bg4JhVNcEei1bpdB11kHrA" name="end"/>
+    <ownedOperation xmi:id="_Bg4JhlNcEei1bpdB11kHrA" name="setID">
+      <ownedParameter xmi:id="_Bg4Jh1NcEei1bpdB11kHrA" name="id">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Bg4JiFNcEei1bpdB11kHrA" name="getID">
+      <ownedParameter xmi:id="_Bg4JiVNcEei1bpdB11kHrA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_CuWCMFNcEei1bpdB11kHrA" memberEnd="_CuWCMVNcEei1bpdB11kHrA _CuWCNFNcEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_CuWCNFNcEei1bpdB11kHrA" name="dataHandlers" type="_0xYE8FNDEei3eI18MZU1xg" association="_CuWCMFNcEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CuWCNVNcEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CuWCNlNcEei1bpdB11kHrA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ewKuMFNcEei1bpdB11kHrA" memberEnd="_ewKuMVNcEei1bpdB11kHrA _ewKuNFNcEei1bpdB11kHrA" navigableOwnedEnd="_ewKuNFNcEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_ewKuNFNcEei1bpdB11kHrA" name="cUIs" type="_hEHYsFNaEei1bpdB11kHrA" association="_ewKuMFNcEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ewKuNVNcEei1bpdB11kHrA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ewKuNlNcEei1bpdB11kHrA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wvn9YFNcEei1bpdB11kHrA" memberEnd="_wvn9YVNcEei1bpdB11kHrA _wvn9ZFNcEei1bpdB11kHrA" navigableOwnedEnd="_wvn9YVNcEei1bpdB11kHrA _wvn9ZFNcEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_wvn9YVNcEei1bpdB11kHrA" name="cUIs" type="_gT-VMFNaEei1bpdB11kHrA" aggregation="shared" association="_wvn9YFNcEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvn9YlNcEei1bpdB11kHrA" value="10"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvn9Y1NcEei1bpdB11kHrA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_wvn9ZFNcEei1bpdB11kHrA" name="threadControlless" type="_hEHYsFNaEei1bpdB11kHrA" aggregation="shared" association="_wvn9YFNcEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wvn9ZVNcEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wvn9ZlNcEei1bpdB11kHrA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_6L-jEFNcEei1bpdB11kHrA" name="Threads" visibility="private">
+    <ownedLiteral xmi:id="_7osYsFNcEei1bpdB11kHrA" name="Processing"/>
+    <ownedLiteral xmi:id="_89NUkFNcEei1bpdB11kHrA" name="XBeeIO"/>
+    <ownedLiteral xmi:id="_-iX7kFNcEei1bpdB11kHrA" name="DatabaseWorker"/>
+    <ownedLiteral xmi:id="__kSrkFNcEei1bpdB11kHrA" name="FileIO"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SGPj0FNdEei1bpdB11kHrA" name="Flag [4]{unique}"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_h5vcUFNeEei1bpdB11kHrA" name="String[*]{unique}"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uBlX4FNeEei1bpdB11kHrA" name="Queue" visibility="package">
+    <ownedAttribute xmi:id="_uBlX4VNeEei1bpdB11kHrA" name="max_size" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uBlX4lNeEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uBlX41NeEei1bpdB11kHrA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_uBlX5FNeEei1bpdB11kHrA" name="items" visibility="private" type="_sBIz0FNCEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uBlX5VNeEei1bpdB11kHrA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uBlX5lNeEei1bpdB11kHrA" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_uBlX51NeEei1bpdB11kHrA" name="get">
+      <ownedParameter xmi:id="_uBlX6FNeEei1bpdB11kHrA" type="_sBIz0FNCEei3eI18MZU1xg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_uBlX6VNeEei1bpdB11kHrA" name="put">
+      <ownedParameter xmi:id="_uBlX6lNeEei1bpdB11kHrA" name="item" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_uBlX61NeEei1bpdB11kHrA" name="isEmpty">
+      <ownedParameter xmi:id="_uBlX7FNeEei1bpdB11kHrA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_AV75AFNfEei1bpdB11kHrA" memberEnd="_AV75AVNfEei1bpdB11kHrA _AV75BFNfEei1bpdB11kHrA" navigableOwnedEnd="_AV75AVNfEei1bpdB11kHrA _AV75BFNfEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_AV75AVNfEei1bpdB11kHrA" name="queues" type="_uBlX4FNeEei1bpdB11kHrA" aggregation="composite" association="_AV75AFNfEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AV75AlNfEei1bpdB11kHrA" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AV75A1NfEei1bpdB11kHrA" value="2"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_AV75BFNfEei1bpdB11kHrA" name="basicIOs" type="_zAzxIFNBEei3eI18MZU1xg" association="_AV75AFNfEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AV75BVNfEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AV75BlNfEei1bpdB11kHrA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_JMfC8FNfEei1bpdB11kHrA" name="ExceptionHandler" visibility="public">
+    <generalization xmi:id="_RtulkFSvEeiU6oyLVNrahg" general="_PCZ-MFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_Na3u8FNfEei1bpdB11kHrA" name="input" visibility="private" type="_7jw-wFNDEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Na3u8VNfEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Na3u8lNfEei1bpdB11kHrA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_XtDwcFNfEei1bpdB11kHrA" name="output" visibility="private" type="_7jw-wFNDEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XtDwcVNfEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XtDwclNfEei1bpdB11kHrA" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_aggIcFNfEei1bpdB11kHrA" name="HandleException" visibility="private" isStatic="true">
+      <ownedParameter xmi:id="_e2xlIFNfEei1bpdB11kHrA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gEnRQFNfEei1bpdB11kHrA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gEn4UFNfEei1bpdB11kHrA" value="1"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_e2obMFNfEei1bpdB11kHrA" name="e"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_g-2r8FNfEei1bpdB11kHrA" name="start"/>
+    <ownedOperation xmi:id="_h2xycFNfEei1bpdB11kHrA" name="stop"/>
+    <ownedOperation xmi:id="_jYW58FNfEei1bpdB11kHrA" name="run"/>
+    <ownedOperation xmi:id="_kSzI8FNfEei1bpdB11kHrA" name="output" visibility="private">
+      <ownedParameter xmi:id="_niXcQFNfEei1bpdB11kHrA" name="msg">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_T3a7oFNfEei1bpdB11kHrA" name="Queue [1..*]{unique}"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_s5Lv8FNfEei1bpdB11kHrA" name="Queue [*]{unque}"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ts_ygFNfEei1bpdB11kHrA" memberEnd="_ts_ygVNfEei1bpdB11kHrA _ts_yhFNfEei1bpdB11kHrA" navigableOwnedEnd="_ts_ygVNfEei1bpdB11kHrA _ts_yhFNfEei1bpdB11kHrA">
+    <ownedEnd xmi:id="_ts_ygVNfEei1bpdB11kHrA" name="queues" type="_7jw-wFNDEei3eI18MZU1xg" association="_ts_ygFNfEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ts_yglNfEei1bpdB11kHrA" value="2"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ts_yg1NfEei1bpdB11kHrA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ts_yhFNfEei1bpdB11kHrA" name="exceptionHandlers" type="_JMfC8FNfEei1bpdB11kHrA" association="_ts_ygFNfEei1bpdB11kHrA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ts_yhVNfEei1bpdB11kHrA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ts_yhlNfEei1bpdB11kHrA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UxMzEFSuEeiU6oyLVNrahg" name="DBCommand" visibility="public">
+    <ownedAttribute xmi:id="_XoX0gFSuEeiU6oyLVNrahg" name="comList" visibility="private" isStatic="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XoYbkFSuEeiU6oyLVNrahg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XoYbkVSuEeiU6oyLVNrahg" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Z2ggAFSuEeiU6oyLVNrahg" name="curCommand" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z2ggAVSuEeiU6oyLVNrahg" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Z2ggAlSuEeiU6oyLVNrahg" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_dGVSAFSuEeiU6oyLVNrahg" name="comArgs" visibility="private" type="_sBIz0FNCEei3eI18MZU1xg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dGV5EFSuEeiU6oyLVNrahg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dGV5EVSuEeiU6oyLVNrahg" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_g8aLsFSuEeiU6oyLVNrahg" name="setCommand">
+      <ownedParameter xmi:id="_kU5KcFSuEeiU6oyLVNrahg" name="com">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_KtI3sFSvEeiU6oyLVNrahg" name="args" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_iG_vgFSuEeiU6oyLVNrahg" name="getCommand">
+      <ownedParameter xmi:id="_onuRkFSuEeiU6oyLVNrahg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_onuRkVSuEeiU6oyLVNrahg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_onuRklSuEeiU6oyLVNrahg" value="1"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_v8dqgFSuEeiU6oyLVNrahg" name="setCommandList" isStatic="true">
+      <ownedParameter xmi:id="_yZvlQFSuEeiU6oyLVNrahg" name="x">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6W-hkFSuEeiU6oyLVNrahg" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8PC2cFSuEeiU6oyLVNrahg" name="getCommand" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_Ae-akFSvEeiU6oyLVNrahg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ae-akVSvEeiU6oyLVNrahg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ae-aklSvEeiU6oyLVNrahg" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EeincFSvEeiU6oyLVNrahg" name="convertIntoCommand" visibility="private" isStatic="true">
+      <ownedParameter xmi:id="_I8G-8FSvEeiU6oyLVNrahg" name="c">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_I8HmAFSvEeiU6oyLVNrahg" name="args" type="_sBIz0FNCEei3eI18MZU1xg"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:ExecutionEnvironment" xmi:id="_3QDBsFUCEeiBRPTG19N31g" name="Python" visibility="private"/>
+  <packagedElement xmi:type="uml:Device" xmi:id="_5T8MEFUCEeiBRPTG19N31g" name="Computer"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_DdqOEFUDEeiBRPTG19N31g" name="Antenna"/>
+  <packagedElement xmi:type="uml:Node" xmi:id="_E5WwAFUDEeiBRPTG19N31g" name="XBee"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_H1TjwFUDEeiBRPTG19N31g" memberEnd="_H1UK0FUDEeiBRPTG19N31g _H1Ux4VUDEeiBRPTG19N31g" navigableOwnedEnd="_H1UK0FUDEeiBRPTG19N31g _H1Ux4VUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_H1UK0FUDEeiBRPTG19N31g" name="antennas" type="_DdqOEFUDEeiBRPTG19N31g" association="_H1TjwFUDEeiBRPTG19N31g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H1UK0VUDEeiBRPTG19N31g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H1Ux4FUDEeiBRPTG19N31g" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_H1Ux4VUDEeiBRPTG19N31g" name="xBees" type="_E5WwAFUDEeiBRPTG19N31g" association="_H1TjwFUDEeiBRPTG19N31g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H1VY8FUDEeiBRPTG19N31g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_H1VY8VUDEeiBRPTG19N31g" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Iht90FUDEeiBRPTG19N31g" memberEnd="_Iht90VUDEeiBRPTG19N31g _Ihuk4VUDEeiBRPTG19N31g" navigableOwnedEnd="_Iht90VUDEeiBRPTG19N31g _Ihuk4VUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_Iht90VUDEeiBRPTG19N31g" name="xBees" type="_E5WwAFUDEeiBRPTG19N31g" association="_Iht90FUDEeiBRPTG19N31g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Iht90lUDEeiBRPTG19N31g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ihuk4FUDEeiBRPTG19N31g" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Ihuk4VUDEeiBRPTG19N31g" name="computers" type="_5T8MEFUCEeiBRPTG19N31g" association="_Iht90FUDEeiBRPTG19N31g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ihuk4lUDEeiBRPTG19N31g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ihuk41UDEeiBRPTG19N31g" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JLHgIFUDEeiBRPTG19N31g" memberEnd="_JLIHMFUDEeiBRPTG19N31g _JLIHM1UDEeiBRPTG19N31g" navigableOwnedEnd="_JLIHMFUDEeiBRPTG19N31g _JLIHM1UDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_JLIHMFUDEeiBRPTG19N31g" name="computers" type="_5T8MEFUCEeiBRPTG19N31g" association="_JLHgIFUDEeiBRPTG19N31g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JLIHMVUDEeiBRPTG19N31g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JLIHMlUDEeiBRPTG19N31g" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_JLIHM1UDEeiBRPTG19N31g" name="pythons" type="_3QDBsFUCEeiBRPTG19N31g" association="_JLHgIFUDEeiBRPTG19N31g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JLIHNFUDEeiBRPTG19N31g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JLIuQFUDEeiBRPTG19N31g" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_RLsEUFUDEeiBRPTG19N31g" name="Operator">
+    <eAnnotations xmi:id="_RLsrYFUDEeiBRPTG19N31g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_RLsrYVUDEeiBRPTG19N31g" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_TWuYgFUDEeiBRPTG19N31g" name="CommandPrompt"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tcXEoFUDEeiBRPTG19N31g" memberEnd="_tcXEoVUDEeiBRPTG19N31g _tcXrsFUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_tcXEoVUDEeiBRPTG19N31g" type="_hEHYsFNaEei1bpdB11kHrA" association="_tcXEoFUDEeiBRPTG19N31g"/>
+    <ownedEnd xmi:id="_tcXrsFUDEeiBRPTG19N31g" type="_0xYE8FNDEei3eI18MZU1xg" association="_tcXEoFUDEeiBRPTG19N31g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tyGrIFUDEeiBRPTG19N31g" memberEnd="_tyGrIVUDEeiBRPTG19N31g _tyGrIlUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_tyGrIVUDEeiBRPTG19N31g" type="_hEHYsFNaEei1bpdB11kHrA" association="_tyGrIFUDEeiBRPTG19N31g"/>
+    <ownedEnd xmi:id="_tyGrIlUDEeiBRPTG19N31g" type="_04nqgFNFEei3eI18MZU1xg" association="_tyGrIFUDEeiBRPTG19N31g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_uHQbwFUDEeiBRPTG19N31g" memberEnd="_uHRC0FUDEeiBRPTG19N31g _uHRC0VUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_uHRC0FUDEeiBRPTG19N31g" type="_hEHYsFNaEei1bpdB11kHrA" association="_uHQbwFUDEeiBRPTG19N31g"/>
+    <ownedEnd xmi:id="_uHRC0VUDEeiBRPTG19N31g" type="_zAzxIFNBEei3eI18MZU1xg" association="_uHQbwFUDEeiBRPTG19N31g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ul1OIFUDEeiBRPTG19N31g" memberEnd="_ul1OIVUDEeiBRPTG19N31g _ul1OIlUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_ul1OIVUDEeiBRPTG19N31g" type="_hEHYsFNaEei1bpdB11kHrA" association="_ul1OIFUDEeiBRPTG19N31g"/>
+    <ownedEnd xmi:id="_ul1OIlUDEeiBRPTG19N31g" type="_SpspcFNNEei3eI18MZU1xg" association="_ul1OIFUDEeiBRPTG19N31g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vj9qUFUDEeiBRPTG19N31g" memberEnd="_vj9qUVUDEeiBRPTG19N31g _vj9qUlUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_vj9qUVUDEeiBRPTG19N31g" type="_TWuYgFUDEeiBRPTG19N31g" association="_vj9qUFUDEeiBRPTG19N31g"/>
+    <ownedEnd xmi:id="_vj9qUlUDEeiBRPTG19N31g" type="_gT-VMFNaEei1bpdB11kHrA" association="_vj9qUFUDEeiBRPTG19N31g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_w6_usFUDEeiBRPTG19N31g" memberEnd="_w6_usVUDEeiBRPTG19N31g _w6_uslUDEeiBRPTG19N31g">
+    <ownedEnd xmi:id="_w6_usVUDEeiBRPTG19N31g" type="_RLsEUFUDEeiBRPTG19N31g" association="_w6_usFUDEeiBRPTG19N31g"/>
+    <ownedEnd xmi:id="_w6_uslUDEeiBRPTG19N31g" type="_TWuYgFUDEeiBRPTG19N31g" association="_w6_usFUDEeiBRPTG19N31g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_3eB94FUDEeiBRPTG19N31g" name="NewModel">
+    <ownedAttribute xmi:id="_8WHHIFUDEeiBRPTG19N31g" name="Class38" type="_8WGgEFUDEeiBRPTG19N31g"/>
+    <ownedAttribute xmi:id="_9wgBglUDEeiBRPTG19N31g" name="Class39" type="_9wgBgFUDEeiBRPTG19N31g"/>
+    <ownedAttribute xmi:id="__ResEFUDEeiBRPTG19N31g" name="Class40" type="__ReFAFUDEeiBRPTG19N31g"/>
+    <ownedAttribute xmi:id="_Dd_IwFUEEeiBRPTG19N31g" name="Class41" type="_Dd8sgFUEEeiBRPTG19N31g"/>
+    <ownedAttribute xmi:id="_HJApAlUEEeiBRPTG19N31g" name="Actor2" type="_HJApAFUEEeiBRPTG19N31g"/>
+    <ownedAttribute xmi:id="_MCgHgFUEEeiBRPTG19N31g" name="DatabaseWorker" type="_SpspcFNNEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_NVGX0FUEEeiBRPTG19N31g" name="Distributor" type="_04nqgFNFEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_PvXa0FUEEeiBRPTG19N31g" name="DataHandler" type="_0xYE8FNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_QSc5wFUEEeiBRPTG19N31g" name="BasicIO" type="_zAzxIFNBEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_XplfYFUEEeiBRPTG19N31g" name="FileIO" type="_xu5KYFNOEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_gnOv0FUEEeiBRPTG19N31g" name="Queue" type="_7jw-wFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_rDCAUFUEEeiBRPTG19N31g" name="Queue" type="_7jw-wFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_x-1U0FUEEeiBRPTG19N31g" name="Distributor" type="_04nqgFNFEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_OBCbUFUFEeiBRPTG19N31g" name="DatabaseWorker" type="_SpspcFNNEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_P3p-sFUFEeiBRPTG19N31g" name="Queue" type="_7jw-wFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_RMfqsFUFEeiBRPTG19N31g" name="DatabaseWorker" type="_SpspcFNNEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_SW8EkFUFEeiBRPTG19N31g" name="DBInterface" type="_QwkkoFNNEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_TcSjEFUFEeiBRPTG19N31g" name="Queue" type="_7jw-wFNDEei3eI18MZU1xg"/>
+    <ownedAttribute xmi:id="_UbsKkFUFEeiBRPTG19N31g" name="FileIO" type="_xu5KYFNOEei3eI18MZU1xg"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_tYy90VUEEeiBRPTG19N31g" name="put"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DWLbIVUFEeiBRPTG19N31g" name="put"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_EtYeoVUFEeiBRPTG19N31g" name="isEmpty"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_GWETsVUFEeiBRPTG19N31g" name="get"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_J8ExEVUFEeiBRPTG19N31g" name="isEmpty"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_LybOsVUFEeiBRPTG19N31g" name="get"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WAj2oVUFEeiBRPTG19N31g" name="put"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_aNHWoVUFEeiBRPTG19N31g" name="put"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_cOzhkVUFEeiBRPTG19N31g" name="isEmpty"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eCeeoVUFEeiBRPTG19N31g" name="get"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_iAnIIVUFEeiBRPTG19N31g" name="isEmpty"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_i4OsoVUFEeiBRPTG19N31g" name="get"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kZmYwFUFEeiBRPTG19N31g" name="handler"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_oXz6wFUFEeiBRPTG19N31g" name="defaultDataProcessing"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zBoZIVUFEeiBRPTG19N31g" name="handle"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1RdtwVUFEeiBRPTG19N31g" name="execute"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="__PQk4FULEeio--msVWXZMQ" name="operate"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DyF24FUMEeio--msVWXZMQ" name="handler"/>
+    <lifeline xmi:id="_QSdg0FUEEeiBRPTG19N31g" name="BasicIO" represents="_QSc5wFUEEeiBRPTG19N31g" coveredBy="_DWMCMFUFEeiBRPTG19N31g __PQk4lULEeio--msVWXZMQ __PQk41ULEeio--msVWXZMQ __PQk5VULEeio--msVWXZMQ __PQk5FULEeio--msVWXZMQ __PRL8FULEeio--msVWXZMQ _DyF24lUMEeio--msVWXZMQ _DyF241UMEeio--msVWXZMQ _DyF25VUMEeio--msVWXZMQ _DyF25FUMEeio--msVWXZMQ _DyGd8FUMEeio--msVWXZMQ"/>
+    <lifeline xmi:id="_gnOv0VUEEeiBRPTG19N31g" name="Queue" represents="_gnOv0FUEEeiBRPTG19N31g" coveredBy="_DWMCMVUFEeiBRPTG19N31g _DWMCMlUFEeiBRPTG19N31g _DWMCM1UFEeiBRPTG19N31g _EtZFsFUFEeiBRPTG19N31g _EtZFslUFEeiBRPTG19N31g _EtZFsVUFEeiBRPTG19N31g _GWETtFUFEeiBRPTG19N31g _GWETtlUFEeiBRPTG19N31g _GWETtVUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_PvYB4FUEEeiBRPTG19N31g" name="DataHandler" represents="_PvXa0FUEEeiBRPTG19N31g" coveredBy="_tYy90lUEEeiBRPTG19N31g _EtYeo1UFEeiBRPTG19N31g _EtZFs1UFEeiBRPTG19N31g _GWETs1UFEeiBRPTG19N31g _GWE6wFUFEeiBRPTG19N31g _oXz6wlUFEeiBRPTG19N31g _oXz6w1UFEeiBRPTG19N31g _oXz6xVUFEeiBRPTG19N31g _oXz6xFUFEeiBRPTG19N31g _oXz6xlUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_rDCnYFUEEeiBRPTG19N31g" name="Queue" represents="_rDCAUFUEEeiBRPTG19N31g" coveredBy="_tYy901UEEeiBRPTG19N31g _tYy91FUEEeiBRPTG19N31g _tYy91VUEEeiBRPTG19N31g _J8ExFFUFEeiBRPTG19N31g _J8FYIVUFEeiBRPTG19N31g _J8FYIFUFEeiBRPTG19N31g _LybOtFUFEeiBRPTG19N31g _LybOtlUFEeiBRPTG19N31g _LybOtVUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_x-1U0VUEEeiBRPTG19N31g" name="Distributor" represents="_x-1U0FUEEeiBRPTG19N31g" coveredBy="_J8ExE1UFEeiBRPTG19N31g _J8FYIlUFEeiBRPTG19N31g _LybOs1UFEeiBRPTG19N31g _LybOt1UFEeiBRPTG19N31g _WAj2olUFEeiBRPTG19N31g _aNHWolUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_P3qlwFUFEeiBRPTG19N31g" name="Queue" represents="_P3p-sFUFEeiBRPTG19N31g" coveredBy="_WAj2o1UFEeiBRPTG19N31g _WAj2pFUFEeiBRPTG19N31g _WAj2pVUFEeiBRPTG19N31g _cOzhlFUFEeiBRPTG19N31g _cOzhllUFEeiBRPTG19N31g _cOzhlVUFEeiBRPTG19N31g _eCeepFUFEeiBRPTG19N31g _eCeeplUFEeiBRPTG19N31g _eCeepVUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_RMgRwFUFEeiBRPTG19N31g" name="DatabaseWorker" represents="_RMfqsFUFEeiBRPTG19N31g" coveredBy="_cOzhk1UFEeiBRPTG19N31g _cO0IoFUFEeiBRPTG19N31g _eCeeo1UFEeiBRPTG19N31g _eCfFsFUFEeiBRPTG19N31g _zBpAMVUFEeiBRPTG19N31g _zBpAMlUFEeiBRPTG19N31g _zBpANFUFEeiBRPTG19N31g _zBpAM1UFEeiBRPTG19N31g _zBpANVUFEeiBRPTG19N31g _1Rdtw1UFEeiBRPTG19N31g _1Rdtx1UFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_SW8EkVUFEeiBRPTG19N31g" name="DBInterface" represents="_SW8EkFUFEeiBRPTG19N31g" coveredBy="_1RdtxFUFEeiBRPTG19N31g _1RdtxlUFEeiBRPTG19N31g _1RdtxVUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_TcTKIFUFEeiBRPTG19N31g" name="Queue" represents="_TcSjEFUFEeiBRPTG19N31g" coveredBy="_aNHWo1UFEeiBRPTG19N31g _aNHWpFUFEeiBRPTG19N31g _aNHWpVUFEeiBRPTG19N31g _iAnIJFUFEeiBRPTG19N31g _iAnIJlUFEeiBRPTG19N31g _iAnIJVUFEeiBRPTG19N31g _i4PTsFUFEeiBRPTG19N31g _i4PTslUFEeiBRPTG19N31g _i4PTsVUFEeiBRPTG19N31g"/>
+    <lifeline xmi:id="_UbsKkVUFEeiBRPTG19N31g" name="FileIO" represents="_UbsKkFUFEeiBRPTG19N31g" coveredBy="_iAnII1UFEeiBRPTG19N31g _iAnIJ1UFEeiBRPTG19N31g _i4Oso1UFEeiBRPTG19N31g _i4PTs1UFEeiBRPTG19N31g _kZmYwlUFEeiBRPTG19N31g _kZm_0FUFEeiBRPTG19N31g _kZm_0lUFEeiBRPTG19N31g _kZm_0VUFEeiBRPTG19N31g _kZm_01UFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PQk4lULEeio--msVWXZMQ" name="operate_sender" covered="_QSdg0FUEEeiBRPTG19N31g" message="__OxcsFULEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PQk41ULEeio--msVWXZMQ" name="operate_receiver" covered="_QSdg0FUEEeiBRPTG19N31g" message="__OxcsFULEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="__PQk5VULEeio--msVWXZMQ" name="operate" covered="_QSdg0FUEEeiBRPTG19N31g" finish="__PQk5FULEeio--msVWXZMQ" start="__PQk41ULEeio--msVWXZMQ" behavior="__PQk4FULEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PQk5FULEeio--msVWXZMQ" name="operate_reply_sender" covered="_QSdg0FUEEeiBRPTG19N31g" message="__PQk4VULEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PRL8FULEeio--msVWXZMQ" name="operate_reply_receiver" covered="_QSdg0FUEEeiBRPTG19N31g" message="__PQk4VULEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DyF24lUMEeio--msVWXZMQ" name="handler_sender" covered="_QSdg0FUEEeiBRPTG19N31g" message="_DyFP0FUMEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DyF241UMEeio--msVWXZMQ" name="handler_receiver" covered="_QSdg0FUEEeiBRPTG19N31g" message="_DyFP0FUMEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_DyF25VUMEeio--msVWXZMQ" name="handler" covered="_QSdg0FUEEeiBRPTG19N31g" finish="_DyF25FUMEeio--msVWXZMQ" start="_DyF241UMEeio--msVWXZMQ" behavior="_DyF24FUMEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DyF25FUMEeio--msVWXZMQ" name="handler_reply_sender" covered="_QSdg0FUEEeiBRPTG19N31g" message="_DyF24VUMEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DyGd8FUMEeio--msVWXZMQ" name="handler_reply_receiver" covered="_QSdg0FUEEeiBRPTG19N31g" message="_DyF24VUMEeio--msVWXZMQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DWMCMFUFEeiBRPTG19N31g" name="put_sender" covered="_QSdg0FUEEeiBRPTG19N31g" message="_DWLbIFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DWMCMVUFEeiBRPTG19N31g" name="put_receiver" covered="_gnOv0VUEEeiBRPTG19N31g" message="_DWLbIFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_DWMCMlUFEeiBRPTG19N31g" name="put" covered="_gnOv0VUEEeiBRPTG19N31g" finish="_DWMCM1UFEeiBRPTG19N31g" start="_DWMCMVUFEeiBRPTG19N31g" behavior="_DWLbIVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_DWMCM1UFEeiBRPTG19N31g" name="put_finish" covered="_gnOv0VUEEeiBRPTG19N31g" execution="_DWMCMlUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EtYeo1UFEeiBRPTG19N31g" name="isEmpty_sender" covered="_PvYB4FUEEeiBRPTG19N31g" message="_EtYeoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EtZFsFUFEeiBRPTG19N31g" name="isEmpty_receiver" covered="_gnOv0VUEEeiBRPTG19N31g" message="_EtYeoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_EtZFslUFEeiBRPTG19N31g" name="isEmpty" covered="_gnOv0VUEEeiBRPTG19N31g" finish="_EtZFsVUFEeiBRPTG19N31g" start="_EtZFsFUFEeiBRPTG19N31g" behavior="_EtYeoVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EtZFsVUFEeiBRPTG19N31g" name="isEmpty_reply_sender" covered="_gnOv0VUEEeiBRPTG19N31g" message="_EtYeolUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EtZFs1UFEeiBRPTG19N31g" name="isEmpty_reply_receiver" covered="_PvYB4FUEEeiBRPTG19N31g" message="_EtYeolUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oXz6wlUFEeiBRPTG19N31g" name="defaultDataProcessing_sender" covered="_PvYB4FUEEeiBRPTG19N31g" message="_oXzTsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oXz6w1UFEeiBRPTG19N31g" name="defaultDataProcessing_receiver" covered="_PvYB4FUEEeiBRPTG19N31g" message="_oXzTsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_oXz6xVUFEeiBRPTG19N31g" name="defaultDataProcessing" covered="_PvYB4FUEEeiBRPTG19N31g" finish="_oXz6xFUFEeiBRPTG19N31g" start="_oXz6w1UFEeiBRPTG19N31g" behavior="_oXz6wFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oXz6xFUFEeiBRPTG19N31g" name="defaultDataProcessing_reply_sender" covered="_PvYB4FUEEeiBRPTG19N31g" message="_oXz6wVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oXz6xlUFEeiBRPTG19N31g" name="defaultDataProcessing_reply_receiver" covered="_PvYB4FUEEeiBRPTG19N31g" message="_oXz6wVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GWETs1UFEeiBRPTG19N31g" name="get_sender" covered="_PvYB4FUEEeiBRPTG19N31g" message="_GWETsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GWETtFUFEeiBRPTG19N31g" name="get_receiver" covered="_gnOv0VUEEeiBRPTG19N31g" message="_GWETsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_GWETtlUFEeiBRPTG19N31g" name="get" covered="_gnOv0VUEEeiBRPTG19N31g" finish="_GWETtVUFEeiBRPTG19N31g" start="_GWETtFUFEeiBRPTG19N31g" behavior="_GWETsVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GWETtVUFEeiBRPTG19N31g" name="get_reply_sender" covered="_gnOv0VUEEeiBRPTG19N31g" message="_GWETslUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GWE6wFUFEeiBRPTG19N31g" name="get_reply_receiver" covered="_PvYB4FUEEeiBRPTG19N31g" message="_GWETslUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tYy90lUEEeiBRPTG19N31g" name="put_sender" covered="_PvYB4FUEEeiBRPTG19N31g" message="_tYy90FUEEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tYy901UEEeiBRPTG19N31g" name="put_receiver" covered="_rDCnYFUEEeiBRPTG19N31g" message="_tYy90FUEEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_tYy91FUEEeiBRPTG19N31g" name="put" covered="_rDCnYFUEEeiBRPTG19N31g" finish="_tYy91VUEEeiBRPTG19N31g" start="_tYy901UEEeiBRPTG19N31g" behavior="_tYy90VUEEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_tYy91VUEEeiBRPTG19N31g" name="put_finish" covered="_rDCnYFUEEeiBRPTG19N31g" execution="_tYy91FUEEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_J8ExE1UFEeiBRPTG19N31g" name="isEmpty_sender" covered="_x-1U0VUEEeiBRPTG19N31g" message="_J8ExEFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_J8ExFFUFEeiBRPTG19N31g" name="isEmpty_receiver" covered="_rDCnYFUEEeiBRPTG19N31g" message="_J8ExEFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_J8FYIVUFEeiBRPTG19N31g" name="isEmpty" covered="_rDCnYFUEEeiBRPTG19N31g" finish="_J8FYIFUFEeiBRPTG19N31g" start="_J8ExFFUFEeiBRPTG19N31g" behavior="_J8ExEVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_J8FYIFUFEeiBRPTG19N31g" name="isEmpty_reply_sender" covered="_rDCnYFUEEeiBRPTG19N31g" message="_J8ExElUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_J8FYIlUFEeiBRPTG19N31g" name="isEmpty_reply_receiver" covered="_x-1U0VUEEeiBRPTG19N31g" message="_J8ExElUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LybOs1UFEeiBRPTG19N31g" name="get_sender" covered="_x-1U0VUEEeiBRPTG19N31g" message="_LybOsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LybOtFUFEeiBRPTG19N31g" name="get_receiver" covered="_rDCnYFUEEeiBRPTG19N31g" message="_LybOsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_LybOtlUFEeiBRPTG19N31g" name="get" covered="_rDCnYFUEEeiBRPTG19N31g" finish="_LybOtVUFEeiBRPTG19N31g" start="_LybOtFUFEeiBRPTG19N31g" behavior="_LybOsVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LybOtVUFEeiBRPTG19N31g" name="get_reply_sender" covered="_rDCnYFUEEeiBRPTG19N31g" message="_LybOslUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LybOt1UFEeiBRPTG19N31g" name="get_reply_receiver" covered="_x-1U0VUEEeiBRPTG19N31g" message="_LybOslUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WAj2olUFEeiBRPTG19N31g" name="put_sender" covered="_x-1U0VUEEeiBRPTG19N31g" message="_WAj2oFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WAj2o1UFEeiBRPTG19N31g" name="put_receiver" covered="_P3qlwFUFEeiBRPTG19N31g" message="_WAj2oFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_WAj2pFUFEeiBRPTG19N31g" name="put" covered="_P3qlwFUFEeiBRPTG19N31g" finish="_WAj2pVUFEeiBRPTG19N31g" start="_WAj2o1UFEeiBRPTG19N31g" behavior="_WAj2oVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_WAj2pVUFEeiBRPTG19N31g" name="put_finish" covered="_P3qlwFUFEeiBRPTG19N31g" execution="_WAj2pFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aNHWolUFEeiBRPTG19N31g" name="put_sender" covered="_x-1U0VUEEeiBRPTG19N31g" message="_aNHWoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aNHWo1UFEeiBRPTG19N31g" name="put_receiver" covered="_TcTKIFUFEeiBRPTG19N31g" message="_aNHWoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_aNHWpFUFEeiBRPTG19N31g" name="put" covered="_TcTKIFUFEeiBRPTG19N31g" finish="_aNHWpVUFEeiBRPTG19N31g" start="_aNHWo1UFEeiBRPTG19N31g" behavior="_aNHWoVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_aNHWpVUFEeiBRPTG19N31g" name="put_finish" covered="_TcTKIFUFEeiBRPTG19N31g" execution="_aNHWpFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cOzhk1UFEeiBRPTG19N31g" name="isEmpty_sender" covered="_RMgRwFUFEeiBRPTG19N31g" message="_cOzhkFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cOzhlFUFEeiBRPTG19N31g" name="isEmpty_receiver" covered="_P3qlwFUFEeiBRPTG19N31g" message="_cOzhkFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_cOzhllUFEeiBRPTG19N31g" name="isEmpty" covered="_P3qlwFUFEeiBRPTG19N31g" finish="_cOzhlVUFEeiBRPTG19N31g" start="_cOzhlFUFEeiBRPTG19N31g" behavior="_cOzhkVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iAnII1UFEeiBRPTG19N31g" name="isEmpty_sender" covered="_UbsKkVUFEeiBRPTG19N31g" message="_iAnIIFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iAnIJFUFEeiBRPTG19N31g" name="isEmpty_receiver" covered="_TcTKIFUFEeiBRPTG19N31g" message="_iAnIIFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_iAnIJlUFEeiBRPTG19N31g" name="isEmpty" covered="_TcTKIFUFEeiBRPTG19N31g" finish="_iAnIJVUFEeiBRPTG19N31g" start="_iAnIJFUFEeiBRPTG19N31g" behavior="_iAnIIVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iAnIJVUFEeiBRPTG19N31g" name="isEmpty_reply_sender" covered="_TcTKIFUFEeiBRPTG19N31g" message="_iAnIIlUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_iAnIJ1UFEeiBRPTG19N31g" name="isEmpty_reply_receiver" covered="_UbsKkVUFEeiBRPTG19N31g" message="_iAnIIlUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cOzhlVUFEeiBRPTG19N31g" name="isEmpty_reply_sender" covered="_P3qlwFUFEeiBRPTG19N31g" message="_cOzhklUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_cO0IoFUFEeiBRPTG19N31g" name="isEmpty_reply_receiver" covered="_RMgRwFUFEeiBRPTG19N31g" message="_cOzhklUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eCeeo1UFEeiBRPTG19N31g" name="get_sender" covered="_RMgRwFUFEeiBRPTG19N31g" message="_eCeeoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eCeepFUFEeiBRPTG19N31g" name="get_receiver" covered="_P3qlwFUFEeiBRPTG19N31g" message="_eCeeoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_eCeeplUFEeiBRPTG19N31g" name="get" covered="_P3qlwFUFEeiBRPTG19N31g" finish="_eCeepVUFEeiBRPTG19N31g" start="_eCeepFUFEeiBRPTG19N31g" behavior="_eCeeoVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i4Oso1UFEeiBRPTG19N31g" name="get_sender" covered="_UbsKkVUFEeiBRPTG19N31g" message="_i4OsoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i4PTsFUFEeiBRPTG19N31g" name="get_receiver" covered="_TcTKIFUFEeiBRPTG19N31g" message="_i4OsoFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_i4PTslUFEeiBRPTG19N31g" name="get" covered="_TcTKIFUFEeiBRPTG19N31g" finish="_i4PTsVUFEeiBRPTG19N31g" start="_i4PTsFUFEeiBRPTG19N31g" behavior="_i4OsoVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i4PTsVUFEeiBRPTG19N31g" name="get_reply_sender" covered="_TcTKIFUFEeiBRPTG19N31g" message="_i4OsolUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i4PTs1UFEeiBRPTG19N31g" name="get_reply_receiver" covered="_UbsKkVUFEeiBRPTG19N31g" message="_i4OsolUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eCeepVUFEeiBRPTG19N31g" name="get_reply_sender" covered="_P3qlwFUFEeiBRPTG19N31g" message="_eCeeolUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_eCfFsFUFEeiBRPTG19N31g" name="get_reply_receiver" covered="_RMgRwFUFEeiBRPTG19N31g" message="_eCeeolUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kZmYwlUFEeiBRPTG19N31g" name="handler_sender" covered="_UbsKkVUFEeiBRPTG19N31g" message="_kZlxsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zBpAMVUFEeiBRPTG19N31g" name="handle_sender" covered="_RMgRwFUFEeiBRPTG19N31g" message="_zBoZIFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zBpAMlUFEeiBRPTG19N31g" name="handle_receiver" covered="_RMgRwFUFEeiBRPTG19N31g" message="_zBoZIFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_zBpANFUFEeiBRPTG19N31g" name="handle" covered="_RMgRwFUFEeiBRPTG19N31g" finish="_zBpAM1UFEeiBRPTG19N31g" start="_zBpAMlUFEeiBRPTG19N31g" behavior="_zBoZIVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zBpAM1UFEeiBRPTG19N31g" name="handle_reply_sender" covered="_RMgRwFUFEeiBRPTG19N31g" message="_zBpAMFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kZm_0FUFEeiBRPTG19N31g" name="handler_receiver" covered="_UbsKkVUFEeiBRPTG19N31g" message="_kZlxsFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kZm_0lUFEeiBRPTG19N31g" name="handler" covered="_UbsKkVUFEeiBRPTG19N31g" finish="_kZm_0VUFEeiBRPTG19N31g" start="_kZm_0FUFEeiBRPTG19N31g" behavior="_kZmYwFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kZm_0VUFEeiBRPTG19N31g" name="handler_reply_sender" covered="_UbsKkVUFEeiBRPTG19N31g" message="_kZmYwVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kZm_01UFEeiBRPTG19N31g" name="handler_reply_receiver" covered="_UbsKkVUFEeiBRPTG19N31g" message="_kZmYwVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zBpANVUFEeiBRPTG19N31g" name="handle_reply_receiver" covered="_RMgRwFUFEeiBRPTG19N31g" message="_zBpAMFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1Rdtw1UFEeiBRPTG19N31g" name="execute_sender" covered="_RMgRwFUFEeiBRPTG19N31g" message="_1RdtwFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1RdtxFUFEeiBRPTG19N31g" name="execute_receiver" covered="_SW8EkVUFEeiBRPTG19N31g" message="_1RdtwFUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_1RdtxlUFEeiBRPTG19N31g" name="execute" covered="_SW8EkVUFEeiBRPTG19N31g" finish="_1RdtxVUFEeiBRPTG19N31g" start="_1RdtxFUFEeiBRPTG19N31g" behavior="_1RdtwVUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1RdtxVUFEeiBRPTG19N31g" name="execute_reply_sender" covered="_SW8EkVUFEeiBRPTG19N31g" message="_1RdtwlUFEeiBRPTG19N31g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1Rdtx1UFEeiBRPTG19N31g" name="execute_reply_receiver" covered="_RMgRwFUFEeiBRPTG19N31g" message="_1RdtwlUFEeiBRPTG19N31g"/>
+    <message xmi:id="_tYy90FUEEeiBRPTG19N31g" name="put" messageSort="asynchCall" receiveEvent="_tYy901UEEeiBRPTG19N31g" sendEvent="_tYy90lUEEeiBRPTG19N31g" signature="_7jw-yVNDEei3eI18MZU1xg"/>
+    <message xmi:id="_DWLbIFUFEeiBRPTG19N31g" name="put" messageSort="asynchCall" receiveEvent="_DWMCMVUFEeiBRPTG19N31g" sendEvent="_DWMCMFUFEeiBRPTG19N31g" signature="_7jw-yVNDEei3eI18MZU1xg"/>
+    <message xmi:id="_EtYeoFUFEeiBRPTG19N31g" name="isEmpty" receiveEvent="_EtZFsFUFEeiBRPTG19N31g" sendEvent="_EtYeo1UFEeiBRPTG19N31g" signature="_7jw-y1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_EtYeolUFEeiBRPTG19N31g" name="isEmpty_reply" messageSort="reply" receiveEvent="_EtZFs1UFEeiBRPTG19N31g" sendEvent="_EtZFsVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_GWETsFUFEeiBRPTG19N31g" name="get" receiveEvent="_GWETtFUFEeiBRPTG19N31g" sendEvent="_GWETs1UFEeiBRPTG19N31g" signature="_7jw-x1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_GWETslUFEeiBRPTG19N31g" name="get_reply" messageSort="reply" receiveEvent="_GWE6wFUFEeiBRPTG19N31g" sendEvent="_GWETtVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_J8ExEFUFEeiBRPTG19N31g" name="isEmpty" receiveEvent="_J8ExFFUFEeiBRPTG19N31g" sendEvent="_J8ExE1UFEeiBRPTG19N31g" signature="_7jw-y1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_J8ExElUFEeiBRPTG19N31g" name="isEmpty_reply" messageSort="reply" receiveEvent="_J8FYIlUFEeiBRPTG19N31g" sendEvent="_J8FYIFUFEeiBRPTG19N31g"/>
+    <message xmi:id="_LybOsFUFEeiBRPTG19N31g" name="get" receiveEvent="_LybOtFUFEeiBRPTG19N31g" sendEvent="_LybOs1UFEeiBRPTG19N31g" signature="_7jw-x1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_LybOslUFEeiBRPTG19N31g" name="get_reply" messageSort="reply" receiveEvent="_LybOt1UFEeiBRPTG19N31g" sendEvent="_LybOtVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_WAj2oFUFEeiBRPTG19N31g" name="put" messageSort="asynchCall" receiveEvent="_WAj2o1UFEeiBRPTG19N31g" sendEvent="_WAj2olUFEeiBRPTG19N31g" signature="_7jw-yVNDEei3eI18MZU1xg"/>
+    <message xmi:id="_aNHWoFUFEeiBRPTG19N31g" name="put" messageSort="asynchCall" receiveEvent="_aNHWo1UFEeiBRPTG19N31g" sendEvent="_aNHWolUFEeiBRPTG19N31g" signature="_7jw-yVNDEei3eI18MZU1xg"/>
+    <message xmi:id="_cOzhkFUFEeiBRPTG19N31g" name="isEmpty" receiveEvent="_cOzhlFUFEeiBRPTG19N31g" sendEvent="_cOzhk1UFEeiBRPTG19N31g" signature="_7jw-y1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_cOzhklUFEeiBRPTG19N31g" name="isEmpty_reply" messageSort="reply" receiveEvent="_cO0IoFUFEeiBRPTG19N31g" sendEvent="_cOzhlVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_eCeeoFUFEeiBRPTG19N31g" name="get" receiveEvent="_eCeepFUFEeiBRPTG19N31g" sendEvent="_eCeeo1UFEeiBRPTG19N31g" signature="_7jw-x1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_eCeeolUFEeiBRPTG19N31g" name="get_reply" messageSort="reply" receiveEvent="_eCfFsFUFEeiBRPTG19N31g" sendEvent="_eCeepVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_iAnIIFUFEeiBRPTG19N31g" name="isEmpty" receiveEvent="_iAnIJFUFEeiBRPTG19N31g" sendEvent="_iAnII1UFEeiBRPTG19N31g" signature="_7jw-y1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_iAnIIlUFEeiBRPTG19N31g" name="isEmpty_reply" messageSort="reply" receiveEvent="_iAnIJ1UFEeiBRPTG19N31g" sendEvent="_iAnIJVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_i4OsoFUFEeiBRPTG19N31g" name="get" receiveEvent="_i4PTsFUFEeiBRPTG19N31g" sendEvent="_i4Oso1UFEeiBRPTG19N31g" signature="_7jw-x1NDEei3eI18MZU1xg"/>
+    <message xmi:id="_i4OsolUFEeiBRPTG19N31g" name="get_reply" messageSort="reply" receiveEvent="_i4PTs1UFEeiBRPTG19N31g" sendEvent="_i4PTsVUFEeiBRPTG19N31g"/>
+    <message xmi:id="_kZlxsFUFEeiBRPTG19N31g" name="handler" receiveEvent="_kZm_0FUFEeiBRPTG19N31g" sendEvent="_kZmYwlUFEeiBRPTG19N31g" signature="_xu5Kc1NOEei3eI18MZU1xg"/>
+    <message xmi:id="_kZmYwVUFEeiBRPTG19N31g" name="handler_reply" messageSort="reply" receiveEvent="_kZm_01UFEeiBRPTG19N31g" sendEvent="_kZm_0VUFEeiBRPTG19N31g"/>
+    <message xmi:id="_oXzTsFUFEeiBRPTG19N31g" name="defaultDataProcessing" receiveEvent="_oXz6w1UFEeiBRPTG19N31g" sendEvent="_oXz6wlUFEeiBRPTG19N31g" signature="_XDbY4FNEEei3eI18MZU1xg"/>
+    <message xmi:id="_oXz6wVUFEeiBRPTG19N31g" name="defaultDataProcessing_reply" messageSort="reply" receiveEvent="_oXz6xlUFEeiBRPTG19N31g" sendEvent="_oXz6xFUFEeiBRPTG19N31g"/>
+    <message xmi:id="_zBoZIFUFEeiBRPTG19N31g" name="handle" receiveEvent="_zBpAMlUFEeiBRPTG19N31g" sendEvent="_zBpAMVUFEeiBRPTG19N31g" signature="_a8Yb4FNOEei3eI18MZU1xg"/>
+    <message xmi:id="_zBpAMFUFEeiBRPTG19N31g" name="handle_reply" messageSort="reply" receiveEvent="_zBpANVUFEeiBRPTG19N31g" sendEvent="_zBpAM1UFEeiBRPTG19N31g"/>
+    <message xmi:id="_1RdtwFUFEeiBRPTG19N31g" name="execute" receiveEvent="_1RdtxFUFEeiBRPTG19N31g" sendEvent="_1Rdtw1UFEeiBRPTG19N31g" signature="_AAmK4FNOEei3eI18MZU1xg"/>
+    <message xmi:id="_1RdtwlUFEeiBRPTG19N31g" name="execute_reply" messageSort="reply" receiveEvent="_1Rdtx1UFEeiBRPTG19N31g" sendEvent="_1RdtxVUFEeiBRPTG19N31g"/>
+    <message xmi:id="__OxcsFULEeio--msVWXZMQ" name="operate" receiveEvent="__PQk41ULEeio--msVWXZMQ" sendEvent="__PQk4lULEeio--msVWXZMQ" signature="_r-jkcFNDEei3eI18MZU1xg"/>
+    <message xmi:id="__PQk4VULEeio--msVWXZMQ" name="operate_reply" messageSort="reply" receiveEvent="__PRL8FULEeio--msVWXZMQ" sendEvent="__PQk5FULEeio--msVWXZMQ"/>
+    <message xmi:id="_DyFP0FUMEeio--msVWXZMQ" name="handler" receiveEvent="_DyF241UMEeio--msVWXZMQ" sendEvent="_DyF24lUMEeio--msVWXZMQ" signature="_V6hIsFNHEei3eI18MZU1xg"/>
+    <message xmi:id="_DyF24VUMEeio--msVWXZMQ" name="handler_reply" messageSort="reply" receiveEvent="_DyGd8FUMEeio--msVWXZMQ" sendEvent="_DyF25FUMEeio--msVWXZMQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8WGgEFUDEeiBRPTG19N31g" name="DBWorker"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9wgBgFUDEeiBRPTG19N31g" name="DataHandler"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="__ReFAFUDEeiBRPTG19N31g" name="BasicIO"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Dd8sgFUEEeiBRPTG19N31g" name="Distributor"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_HJApAFUEEeiBRPTG19N31g" name="CUIInterface"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_4z_VIFUMEeio--msVWXZMQ" name="NewModel"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_Idq9wFUjEeitnIpJqiswOg" name="Setup" node="_Nw81QFUjEeitnIpJqiswOg _XViw8FUjEeitnIpJqiswOg _hMUBwFUjEeitnIpJqiswOg _5bdGUFUjEeitnIpJqiswOg _pIPhEFUkEeitnIpJqiswOg _zpM-YFUkEeitnIpJqiswOg _3ysjUFUkEeitnIpJqiswOg _MXigYFUlEeitnIpJqiswOg" group="_XViw8FUjEeitnIpJqiswOg _5bdGUFUjEeitnIpJqiswOg _pIPhEFUkEeitnIpJqiswOg">
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_WJFS8FUlEeitnIpJqiswOg" name="Setup" node="_WJFTBlUlEeitnIpJqiswOg _WJFTB1UlEeitnIpJqiswOg _WJFTCFUlEeitnIpJqiswOg _WJFTCVUlEeitnIpJqiswOg _WJFTClUlEeitnIpJqiswOg _WJFTDFUlEeitnIpJqiswOg _WJFTDVUlEeitnIpJqiswOg _WJFTHVUlEeitnIpJqiswOg" group="_WJFTDFUlEeitnIpJqiswOg _WJFTDVUlEeitnIpJqiswOg _WJFTHVUlEeitnIpJqiswOg">
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFS8VUlEeitnIpJqiswOg" target="_WJFTDFUlEeitnIpJqiswOg" source="_WJFTBlUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFS8lUlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFS81UlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFS9FUlEeitnIpJqiswOg" target="_WJFTCVUlEeitnIpJqiswOg" source="_WJFTDFUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFS9VUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFS9lUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFS91UlEeitnIpJqiswOg" target="_WJFTDVUlEeitnIpJqiswOg" source="_WJFTCFUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFS-FUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFS-VUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFS-lUlEeitnIpJqiswOg" target="_WJFTB1UlEeitnIpJqiswOg" source="_WJFTCVUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFS-1UlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFS_FUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFS_VUlEeitnIpJqiswOg" target="_WJFTCFUlEeitnIpJqiswOg" source="_WJFTB1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFS_lUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFS_1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFTAFUlEeitnIpJqiswOg" target="_WJFTHVUlEeitnIpJqiswOg" source="_WJFTDVUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFTAVUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFTAlUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_WJFTA1UlEeitnIpJqiswOg" target="_WJFTClUlEeitnIpJqiswOg" source="_WJFTHVUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFTBFUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFTBVUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+      </edge>
+      <structuredNode xmi:id="_WJFTDFUlEeitnIpJqiswOg" name="initializing queues" incoming="_WJFS8VUlEeitnIpJqiswOg" outgoing="_WJFS9FUlEeitnIpJqiswOg"/>
+      <structuredNode xmi:id="_WJFTDVUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_WJFS91UlEeitnIpJqiswOg _WJFTF1UlEeitnIpJqiswOg" outgoing="_WJFTAFUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_WJFTDlUlEeitnIpJqiswOg" target="_WJFTHFUlEeitnIpJqiswOg" source="_WJFTGlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFTD1UlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFTEFUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_WJFTEVUlEeitnIpJqiswOg" target="_WJFTG1UlEeitnIpJqiswOg" source="_WJFTHFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFTElUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFTE1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_WJFTFFUlEeitnIpJqiswOg" target="_WJFTHFUlEeitnIpJqiswOg" source="_WJFTGlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFTFVUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFTFlUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_WJFTF1UlEeitnIpJqiswOg" target="_WJFTDVUlEeitnIpJqiswOg" source="_WJFTGlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_WJFTGFUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_WJFTGVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_WJFTGlUlEeitnIpJqiswOg" name="Start" outgoing="_WJFTDlUlEeitnIpJqiswOg _WJFTFFUlEeitnIpJqiswOg _WJFTF1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_WJFTG1UlEeitnIpJqiswOg" name="start waiting" incoming="_WJFTEVUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_WJFTHFUlEeitnIpJqiswOg" name="Setup out file" incoming="_WJFTDlUlEeitnIpJqiswOg _WJFTFFUlEeitnIpJqiswOg" outgoing="_WJFTEVUlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+      </structuredNode>
+      <structuredNode xmi:id="_WJFTHVUlEeitnIpJqiswOg" name="Start threads" incoming="_WJFTAFUlEeitnIpJqiswOg" outgoing="_WJFTA1UlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_WJFTBlUlEeitnIpJqiswOg" name="start" outgoing="_WJFS8VUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_WJFTB1UlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_WJFS-lUlEeitnIpJqiswOg" outgoing="_WJFS_VUlEeitnIpJqiswOg">
+        <body>// TODO body of OpaqueAction1</body>
+      </node>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_WJFTCFUlEeitnIpJqiswOg" name="Threads" incoming="_WJFS_VUlEeitnIpJqiswOg" outgoing="_WJFS91UlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_WJFTCVUlEeitnIpJqiswOg" name="Queues" incoming="_WJFS9FUlEeitnIpJqiswOg" outgoing="_WJFS-lUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_WJFTClUlEeitnIpJqiswOg" name="join_call" incoming="_WJFTA1UlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+        <target xmi:id="_WJFTC1UlEeitnIpJqiswOg" name="CUI"/>
+      </node>
+    </ownedBehavior>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_XXiDEFUlEeitnIpJqiswOg" name="Setup" node="_XXiDVFUlEeitnIpJqiswOg _XXiDVVUlEeitnIpJqiswOg _XXiDVlUlEeitnIpJqiswOg _XXiDV1UlEeitnIpJqiswOg _XXiDWFUlEeitnIpJqiswOg _XXiDWlUlEeitnIpJqiswOg _XXiDW1UlEeitnIpJqiswOg _XXiDa1UlEeitnIpJqiswOg" group="_XXiDWlUlEeitnIpJqiswOg _XXiDW1UlEeitnIpJqiswOg _XXiDa1UlEeitnIpJqiswOg">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_XXiDEVUlEeitnIpJqiswOg" name="Setup" node="_XXiDJ1UlEeitnIpJqiswOg _XXiDKFUlEeitnIpJqiswOg _XXiDKVUlEeitnIpJqiswOg _XXiDKlUlEeitnIpJqiswOg _XXiDK1UlEeitnIpJqiswOg _XXiDLVUlEeitnIpJqiswOg _XXiDLlUlEeitnIpJqiswOg _XXiDPlUlEeitnIpJqiswOg" group="_XXiDLVUlEeitnIpJqiswOg _XXiDLlUlEeitnIpJqiswOg _XXiDPlUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDElUlEeitnIpJqiswOg" target="_XXiDLVUlEeitnIpJqiswOg" source="_XXiDJ1UlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDE1UlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDFFUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDFVUlEeitnIpJqiswOg" target="_XXiDKlUlEeitnIpJqiswOg" source="_XXiDLVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDFlUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDF1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDGFUlEeitnIpJqiswOg" target="_XXiDLlUlEeitnIpJqiswOg" source="_XXiDKVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDGVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDGlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDG1UlEeitnIpJqiswOg" target="_XXiDKFUlEeitnIpJqiswOg" source="_XXiDKlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDHFUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDHVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDHlUlEeitnIpJqiswOg" target="_XXiDKVUlEeitnIpJqiswOg" source="_XXiDKFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDH1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDIFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDIVUlEeitnIpJqiswOg" target="_XXiDPlUlEeitnIpJqiswOg" source="_XXiDLlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDIlUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDI1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDJFUlEeitnIpJqiswOg" target="_XXiDK1UlEeitnIpJqiswOg" source="_XXiDPlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDJVUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDJlUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+        </edge>
+        <structuredNode xmi:id="_XXiDLVUlEeitnIpJqiswOg" name="initializing queues" incoming="_XXiDElUlEeitnIpJqiswOg" outgoing="_XXiDFVUlEeitnIpJqiswOg"/>
+        <structuredNode xmi:id="_XXiDLlUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_XXiDGFUlEeitnIpJqiswOg _XXiDOFUlEeitnIpJqiswOg" outgoing="_XXiDIVUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDL1UlEeitnIpJqiswOg" target="_XXiDPVUlEeitnIpJqiswOg" source="_XXiDO1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDMFUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDMVUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDMlUlEeitnIpJqiswOg" target="_XXiDPFUlEeitnIpJqiswOg" source="_XXiDPVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDM1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDNFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDNVUlEeitnIpJqiswOg" target="_XXiDPVUlEeitnIpJqiswOg" source="_XXiDO1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDNlUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDN1UlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDOFUlEeitnIpJqiswOg" target="_XXiDLlUlEeitnIpJqiswOg" source="_XXiDO1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDOVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDOlUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+          </edge>
+          <node xmi:type="uml:InitialNode" xmi:id="_XXiDO1UlEeitnIpJqiswOg" name="Start" outgoing="_XXiDL1UlEeitnIpJqiswOg _XXiDNVUlEeitnIpJqiswOg _XXiDOFUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_XXiDPFUlEeitnIpJqiswOg" name="start waiting" incoming="_XXiDMlUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_XXiDPVUlEeitnIpJqiswOg" name="Setup out file" incoming="_XXiDL1UlEeitnIpJqiswOg _XXiDNVUlEeitnIpJqiswOg" outgoing="_XXiDMlUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+        </structuredNode>
+        <structuredNode xmi:id="_XXiDPlUlEeitnIpJqiswOg" name="Start threads" incoming="_XXiDIVUlEeitnIpJqiswOg" outgoing="_XXiDJFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_XXiDJ1UlEeitnIpJqiswOg" name="start" outgoing="_XXiDElUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_XXiDKFUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_XXiDG1UlEeitnIpJqiswOg" outgoing="_XXiDHlUlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_XXiDKVUlEeitnIpJqiswOg" name="Threads" incoming="_XXiDHlUlEeitnIpJqiswOg" outgoing="_XXiDGFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_XXiDKlUlEeitnIpJqiswOg" name="Queues" incoming="_XXiDFVUlEeitnIpJqiswOg" outgoing="_XXiDG1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_XXiDK1UlEeitnIpJqiswOg" name="join_call" incoming="_XXiDJFUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+          <target xmi:id="_XXiDLFUlEeitnIpJqiswOg" name="CUI"/>
+        </node>
+      </ownedBehavior>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDP1UlEeitnIpJqiswOg" target="_XXiDWlUlEeitnIpJqiswOg" source="_XXiDVFUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDQFUlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDQVUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDQlUlEeitnIpJqiswOg" target="_XXiDV1UlEeitnIpJqiswOg" source="_XXiDWlUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDQ1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDRFUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDRVUlEeitnIpJqiswOg" target="_XXiDW1UlEeitnIpJqiswOg" source="_XXiDVlUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDRlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDR1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDSFUlEeitnIpJqiswOg" target="_XXiDVVUlEeitnIpJqiswOg" source="_XXiDV1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDSVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDSlUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDS1UlEeitnIpJqiswOg" target="_XXiDVlUlEeitnIpJqiswOg" source="_XXiDVVUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDTFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDTVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDTlUlEeitnIpJqiswOg" target="_XXiDa1UlEeitnIpJqiswOg" source="_XXiDW1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDT1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDUFUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDUVUlEeitnIpJqiswOg" target="_XXiDWFUlEeitnIpJqiswOg" source="_XXiDa1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDUlUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDU1UlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+      </edge>
+      <structuredNode xmi:id="_XXiDWlUlEeitnIpJqiswOg" name="initializing queues" incoming="_XXiDP1UlEeitnIpJqiswOg" outgoing="_XXiDQlUlEeitnIpJqiswOg"/>
+      <structuredNode xmi:id="_XXiDW1UlEeitnIpJqiswOg" name="Setup exception handler" incoming="_XXiDRVUlEeitnIpJqiswOg _XXiDZVUlEeitnIpJqiswOg" outgoing="_XXiDTlUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDXFUlEeitnIpJqiswOg" target="_XXiDalUlEeitnIpJqiswOg" source="_XXiDaFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDXVUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDXlUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDX1UlEeitnIpJqiswOg" target="_XXiDaVUlEeitnIpJqiswOg" source="_XXiDalUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDYFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDYVUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDYlUlEeitnIpJqiswOg" target="_XXiDalUlEeitnIpJqiswOg" source="_XXiDaFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDY1UlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDZFUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_XXiDZVUlEeitnIpJqiswOg" target="_XXiDW1UlEeitnIpJqiswOg" source="_XXiDaFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_XXiDZlUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_XXiDZ1UlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_XXiDaFUlEeitnIpJqiswOg" name="Start" outgoing="_XXiDXFUlEeitnIpJqiswOg _XXiDYlUlEeitnIpJqiswOg _XXiDZVUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_XXiDaVUlEeitnIpJqiswOg" name="start waiting" incoming="_XXiDX1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_XXiDalUlEeitnIpJqiswOg" name="Setup out file" incoming="_XXiDXFUlEeitnIpJqiswOg _XXiDYlUlEeitnIpJqiswOg" outgoing="_XXiDX1UlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+      </structuredNode>
+      <structuredNode xmi:id="_XXiDa1UlEeitnIpJqiswOg" name="Start threads" incoming="_XXiDTlUlEeitnIpJqiswOg" outgoing="_XXiDUVUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_XXiDVFUlEeitnIpJqiswOg" name="start" outgoing="_XXiDP1UlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_XXiDVVUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_XXiDSFUlEeitnIpJqiswOg" outgoing="_XXiDS1UlEeitnIpJqiswOg">
+        <body>// TODO body of OpaqueAction1</body>
+      </node>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_XXiDVlUlEeitnIpJqiswOg" name="Threads" incoming="_XXiDS1UlEeitnIpJqiswOg" outgoing="_XXiDRVUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_XXiDV1UlEeitnIpJqiswOg" name="Queues" incoming="_XXiDQlUlEeitnIpJqiswOg" outgoing="_XXiDSFUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_XXiDWFUlEeitnIpJqiswOg" name="join_call" incoming="_XXiDUVUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+        <target xmi:id="_XXiDWVUlEeitnIpJqiswOg" name="CUI"/>
+      </node>
+    </ownedBehavior>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_YUR_MFUlEeitnIpJqiswOg" name="Setup" node="_YUR_dFUlEeitnIpJqiswOg _YUR_dVUlEeitnIpJqiswOg _YUR_dlUlEeitnIpJqiswOg _YUR_d1UlEeitnIpJqiswOg _YUR_eFUlEeitnIpJqiswOg _YUR_elUlEeitnIpJqiswOg _YUR_e1UlEeitnIpJqiswOg _YUR_i1UlEeitnIpJqiswOg" group="_YUR_elUlEeitnIpJqiswOg _YUR_e1UlEeitnIpJqiswOg _YUR_i1UlEeitnIpJqiswOg">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_YUR_MVUlEeitnIpJqiswOg" name="Setup" node="_YUR_R1UlEeitnIpJqiswOg _YUR_SFUlEeitnIpJqiswOg _YUR_SVUlEeitnIpJqiswOg _YUR_SlUlEeitnIpJqiswOg _YUR_S1UlEeitnIpJqiswOg _YUR_TVUlEeitnIpJqiswOg _YUR_TlUlEeitnIpJqiswOg _YUR_XlUlEeitnIpJqiswOg" group="_YUR_TVUlEeitnIpJqiswOg _YUR_TlUlEeitnIpJqiswOg _YUR_XlUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_MlUlEeitnIpJqiswOg" target="_YUR_TVUlEeitnIpJqiswOg" source="_YUR_R1UlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_M1UlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_NFUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_NVUlEeitnIpJqiswOg" target="_YUR_SlUlEeitnIpJqiswOg" source="_YUR_TVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_NlUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_N1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_OFUlEeitnIpJqiswOg" target="_YUR_TlUlEeitnIpJqiswOg" source="_YUR_SVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_OVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_OlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_O1UlEeitnIpJqiswOg" target="_YUR_SFUlEeitnIpJqiswOg" source="_YUR_SlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_PFUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_PVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_PlUlEeitnIpJqiswOg" target="_YUR_SVUlEeitnIpJqiswOg" source="_YUR_SFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_P1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_QFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_QVUlEeitnIpJqiswOg" target="_YUR_XlUlEeitnIpJqiswOg" source="_YUR_TlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_QlUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_Q1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_RFUlEeitnIpJqiswOg" target="_YUR_S1UlEeitnIpJqiswOg" source="_YUR_XlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_RVUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_RlUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+        </edge>
+        <structuredNode xmi:id="_YUR_TVUlEeitnIpJqiswOg" name="initializing queues" incoming="_YUR_MlUlEeitnIpJqiswOg" outgoing="_YUR_NVUlEeitnIpJqiswOg"/>
+        <structuredNode xmi:id="_YUR_TlUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_YUR_OFUlEeitnIpJqiswOg _YUR_WFUlEeitnIpJqiswOg" outgoing="_YUR_QVUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_T1UlEeitnIpJqiswOg" target="_YUR_XVUlEeitnIpJqiswOg" source="_YUR_W1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_UFUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_UVUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_UlUlEeitnIpJqiswOg" target="_YUR_XFUlEeitnIpJqiswOg" source="_YUR_XVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_U1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_VFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_VVUlEeitnIpJqiswOg" target="_YUR_XVUlEeitnIpJqiswOg" source="_YUR_W1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_VlUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_V1UlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_WFUlEeitnIpJqiswOg" target="_YUR_TlUlEeitnIpJqiswOg" source="_YUR_W1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_WVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_WlUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+          </edge>
+          <node xmi:type="uml:InitialNode" xmi:id="_YUR_W1UlEeitnIpJqiswOg" name="Start" outgoing="_YUR_T1UlEeitnIpJqiswOg _YUR_VVUlEeitnIpJqiswOg _YUR_WFUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_YUR_XFUlEeitnIpJqiswOg" name="start waiting" incoming="_YUR_UlUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_YUR_XVUlEeitnIpJqiswOg" name="Setup out file" incoming="_YUR_T1UlEeitnIpJqiswOg _YUR_VVUlEeitnIpJqiswOg" outgoing="_YUR_UlUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+        </structuredNode>
+        <structuredNode xmi:id="_YUR_XlUlEeitnIpJqiswOg" name="Start threads" incoming="_YUR_QVUlEeitnIpJqiswOg" outgoing="_YUR_RFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_YUR_R1UlEeitnIpJqiswOg" name="start" outgoing="_YUR_MlUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_YUR_SFUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_YUR_O1UlEeitnIpJqiswOg" outgoing="_YUR_PlUlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_YUR_SVUlEeitnIpJqiswOg" name="Threads" incoming="_YUR_PlUlEeitnIpJqiswOg" outgoing="_YUR_OFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_YUR_SlUlEeitnIpJqiswOg" name="Queues" incoming="_YUR_NVUlEeitnIpJqiswOg" outgoing="_YUR_O1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_YUR_S1UlEeitnIpJqiswOg" name="join_call" incoming="_YUR_RFUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+          <target xmi:id="_YUR_TFUlEeitnIpJqiswOg" name="CUI"/>
+        </node>
+      </ownedBehavior>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_X1UlEeitnIpJqiswOg" target="_YUR_elUlEeitnIpJqiswOg" source="_YUR_dFUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_YFUlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_YVUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_YlUlEeitnIpJqiswOg" target="_YUR_d1UlEeitnIpJqiswOg" source="_YUR_elUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_Y1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_ZFUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_ZVUlEeitnIpJqiswOg" target="_YUR_e1UlEeitnIpJqiswOg" source="_YUR_dlUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_ZlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_Z1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_aFUlEeitnIpJqiswOg" target="_YUR_dVUlEeitnIpJqiswOg" source="_YUR_d1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_aVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_alUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_a1UlEeitnIpJqiswOg" target="_YUR_dlUlEeitnIpJqiswOg" source="_YUR_dVUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_bFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_bVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_blUlEeitnIpJqiswOg" target="_YUR_i1UlEeitnIpJqiswOg" source="_YUR_e1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_b1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_cFUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_cVUlEeitnIpJqiswOg" target="_YUR_eFUlEeitnIpJqiswOg" source="_YUR_i1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_clUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_c1UlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+      </edge>
+      <structuredNode xmi:id="_YUR_elUlEeitnIpJqiswOg" name="initializing queues" incoming="_YUR_X1UlEeitnIpJqiswOg" outgoing="_YUR_YlUlEeitnIpJqiswOg"/>
+      <structuredNode xmi:id="_YUR_e1UlEeitnIpJqiswOg" name="Setup exception handler" incoming="_YUR_ZVUlEeitnIpJqiswOg _YUR_hVUlEeitnIpJqiswOg" outgoing="_YUR_blUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_fFUlEeitnIpJqiswOg" target="_YUR_ilUlEeitnIpJqiswOg" source="_YUR_iFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_fVUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_flUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_f1UlEeitnIpJqiswOg" target="_YUR_iVUlEeitnIpJqiswOg" source="_YUR_ilUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_gFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_gVUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_glUlEeitnIpJqiswOg" target="_YUR_ilUlEeitnIpJqiswOg" source="_YUR_iFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_g1UlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_hFUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_YUR_hVUlEeitnIpJqiswOg" target="_YUR_e1UlEeitnIpJqiswOg" source="_YUR_iFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_YUR_hlUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_YUR_h1UlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_YUR_iFUlEeitnIpJqiswOg" name="Start" outgoing="_YUR_fFUlEeitnIpJqiswOg _YUR_glUlEeitnIpJqiswOg _YUR_hVUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_YUR_iVUlEeitnIpJqiswOg" name="start waiting" incoming="_YUR_f1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_YUR_ilUlEeitnIpJqiswOg" name="Setup out file" incoming="_YUR_fFUlEeitnIpJqiswOg _YUR_glUlEeitnIpJqiswOg" outgoing="_YUR_f1UlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+      </structuredNode>
+      <structuredNode xmi:id="_YUR_i1UlEeitnIpJqiswOg" name="Start threads" incoming="_YUR_blUlEeitnIpJqiswOg" outgoing="_YUR_cVUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_YUR_dFUlEeitnIpJqiswOg" name="start" outgoing="_YUR_X1UlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_YUR_dVUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_YUR_aFUlEeitnIpJqiswOg" outgoing="_YUR_a1UlEeitnIpJqiswOg">
+        <body>// TODO body of OpaqueAction1</body>
+      </node>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_YUR_dlUlEeitnIpJqiswOg" name="Threads" incoming="_YUR_a1UlEeitnIpJqiswOg" outgoing="_YUR_ZVUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_YUR_d1UlEeitnIpJqiswOg" name="Queues" incoming="_YUR_YlUlEeitnIpJqiswOg" outgoing="_YUR_aFUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_YUR_eFUlEeitnIpJqiswOg" name="join_call" incoming="_YUR_cVUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+        <target xmi:id="_YUR_eVUlEeitnIpJqiswOg" name="CUI"/>
+      </node>
+    </ownedBehavior>
+    <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZQVXwFUlEeitnIpJqiswOg" name="Setup" node="_ZQVYvFUlEeitnIpJqiswOg _ZQVYvVUlEeitnIpJqiswOg _ZQVYvlUlEeitnIpJqiswOg _ZQVYv1UlEeitnIpJqiswOg _ZQVYwFUlEeitnIpJqiswOg _ZQVYwlUlEeitnIpJqiswOg _ZQVYw1UlEeitnIpJqiswOg _ZQVY01UlEeitnIpJqiswOg" group="_ZQVYwlUlEeitnIpJqiswOg _ZQVYw1UlEeitnIpJqiswOg _ZQVY01UlEeitnIpJqiswOg">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZQVXwVUlEeitnIpJqiswOg" name="Setup" node="_ZQVX11UlEeitnIpJqiswOg _ZQVX2FUlEeitnIpJqiswOg _ZQVX2VUlEeitnIpJqiswOg _ZQVX2lUlEeitnIpJqiswOg _ZQVX21UlEeitnIpJqiswOg _ZQVX3VUlEeitnIpJqiswOg _ZQVX3lUlEeitnIpJqiswOg _ZQVX7lUlEeitnIpJqiswOg" group="_ZQVX3VUlEeitnIpJqiswOg _ZQVX3lUlEeitnIpJqiswOg _ZQVX7lUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVXwlUlEeitnIpJqiswOg" target="_ZQVX3VUlEeitnIpJqiswOg" source="_ZQVX11UlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVXw1UlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVXxFUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVXxVUlEeitnIpJqiswOg" target="_ZQVX2lUlEeitnIpJqiswOg" source="_ZQVX3VUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVXxlUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVXx1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVXyFUlEeitnIpJqiswOg" target="_ZQVX3lUlEeitnIpJqiswOg" source="_ZQVX2VUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVXyVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVXylUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVXy1UlEeitnIpJqiswOg" target="_ZQVX2FUlEeitnIpJqiswOg" source="_ZQVX2lUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVXzFUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVXzVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVXzlUlEeitnIpJqiswOg" target="_ZQVX2VUlEeitnIpJqiswOg" source="_ZQVX2FUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVXz1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX0FUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX0VUlEeitnIpJqiswOg" target="_ZQVX7lUlEeitnIpJqiswOg" source="_ZQVX3lUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX0lUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX01UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX1FUlEeitnIpJqiswOg" target="_ZQVX21UlEeitnIpJqiswOg" source="_ZQVX7lUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX1VUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX1lUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+        </edge>
+        <structuredNode xmi:id="_ZQVX3VUlEeitnIpJqiswOg" name="initializing queues" incoming="_ZQVXwlUlEeitnIpJqiswOg" outgoing="_ZQVXxVUlEeitnIpJqiswOg"/>
+        <structuredNode xmi:id="_ZQVX3lUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_ZQVXyFUlEeitnIpJqiswOg _ZQVX6FUlEeitnIpJqiswOg" outgoing="_ZQVX0VUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX31UlEeitnIpJqiswOg" target="_ZQVX7VUlEeitnIpJqiswOg" source="_ZQVX61UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX4FUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX4VUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX4lUlEeitnIpJqiswOg" target="_ZQVX7FUlEeitnIpJqiswOg" source="_ZQVX7VUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX41UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX5FUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX5VUlEeitnIpJqiswOg" target="_ZQVX7VUlEeitnIpJqiswOg" source="_ZQVX61UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX5lUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX51UlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX6FUlEeitnIpJqiswOg" target="_ZQVX3lUlEeitnIpJqiswOg" source="_ZQVX61UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX6VUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX6lUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+          </edge>
+          <node xmi:type="uml:InitialNode" xmi:id="_ZQVX61UlEeitnIpJqiswOg" name="Start" outgoing="_ZQVX31UlEeitnIpJqiswOg _ZQVX5VUlEeitnIpJqiswOg _ZQVX6FUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZQVX7FUlEeitnIpJqiswOg" name="start waiting" incoming="_ZQVX4lUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVX7VUlEeitnIpJqiswOg" name="Setup out file" incoming="_ZQVX31UlEeitnIpJqiswOg _ZQVX5VUlEeitnIpJqiswOg" outgoing="_ZQVX4lUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+        </structuredNode>
+        <structuredNode xmi:id="_ZQVX7lUlEeitnIpJqiswOg" name="Start threads" incoming="_ZQVX0VUlEeitnIpJqiswOg" outgoing="_ZQVX1FUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_ZQVX11UlEeitnIpJqiswOg" name="start" outgoing="_ZQVXwlUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVX2FUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_ZQVXy1UlEeitnIpJqiswOg" outgoing="_ZQVXzlUlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVX2VUlEeitnIpJqiswOg" name="Threads" incoming="_ZQVXzlUlEeitnIpJqiswOg" outgoing="_ZQVXyFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVX2lUlEeitnIpJqiswOg" name="Queues" incoming="_ZQVXxVUlEeitnIpJqiswOg" outgoing="_ZQVXy1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZQVX21UlEeitnIpJqiswOg" name="join_call" incoming="_ZQVX1FUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+          <target xmi:id="_ZQVX3FUlEeitnIpJqiswOg" name="CUI"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZQVX71UlEeitnIpJqiswOg" name="Setup" node="_ZQVYM1UlEeitnIpJqiswOg _ZQVYNFUlEeitnIpJqiswOg _ZQVYNVUlEeitnIpJqiswOg _ZQVYNlUlEeitnIpJqiswOg _ZQVYN1UlEeitnIpJqiswOg _ZQVYOVUlEeitnIpJqiswOg _ZQVYOlUlEeitnIpJqiswOg _ZQVYSlUlEeitnIpJqiswOg" group="_ZQVYOVUlEeitnIpJqiswOg _ZQVYOlUlEeitnIpJqiswOg _ZQVYSlUlEeitnIpJqiswOg">
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZQVX8FUlEeitnIpJqiswOg" name="Setup" node="_ZQVYBlUlEeitnIpJqiswOg _ZQVYB1UlEeitnIpJqiswOg _ZQVYCFUlEeitnIpJqiswOg _ZQVYCVUlEeitnIpJqiswOg _ZQVYClUlEeitnIpJqiswOg _ZQVYDFUlEeitnIpJqiswOg _ZQVYDVUlEeitnIpJqiswOg _ZQVYHVUlEeitnIpJqiswOg" group="_ZQVYDFUlEeitnIpJqiswOg _ZQVYDVUlEeitnIpJqiswOg _ZQVYHVUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX8VUlEeitnIpJqiswOg" target="_ZQVYDFUlEeitnIpJqiswOg" source="_ZQVYBlUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX8lUlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX81UlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX9FUlEeitnIpJqiswOg" target="_ZQVYCVUlEeitnIpJqiswOg" source="_ZQVYDFUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX9VUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX9lUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX91UlEeitnIpJqiswOg" target="_ZQVYDVUlEeitnIpJqiswOg" source="_ZQVYCFUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX-FUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX-VUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX-lUlEeitnIpJqiswOg" target="_ZQVYB1UlEeitnIpJqiswOg" source="_ZQVYCVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX-1UlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX_FUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVX_VUlEeitnIpJqiswOg" target="_ZQVYCFUlEeitnIpJqiswOg" source="_ZQVYB1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVX_lUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVX_1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYAFUlEeitnIpJqiswOg" target="_ZQVYHVUlEeitnIpJqiswOg" source="_ZQVYDVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYAVUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYAlUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYA1UlEeitnIpJqiswOg" target="_ZQVYClUlEeitnIpJqiswOg" source="_ZQVYHVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYBFUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYBVUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+          </edge>
+          <structuredNode xmi:id="_ZQVYDFUlEeitnIpJqiswOg" name="initializing queues" incoming="_ZQVX8VUlEeitnIpJqiswOg" outgoing="_ZQVX9FUlEeitnIpJqiswOg"/>
+          <structuredNode xmi:id="_ZQVYDVUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_ZQVX91UlEeitnIpJqiswOg _ZQVYF1UlEeitnIpJqiswOg" outgoing="_ZQVYAFUlEeitnIpJqiswOg">
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYDlUlEeitnIpJqiswOg" target="_ZQVYHFUlEeitnIpJqiswOg" source="_ZQVYGlUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYD1UlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYEFUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYEVUlEeitnIpJqiswOg" target="_ZQVYG1UlEeitnIpJqiswOg" source="_ZQVYHFUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYElUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYE1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYFFUlEeitnIpJqiswOg" target="_ZQVYHFUlEeitnIpJqiswOg" source="_ZQVYGlUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYFVUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYFlUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYF1UlEeitnIpJqiswOg" target="_ZQVYDVUlEeitnIpJqiswOg" source="_ZQVYGlUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYGFUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYGVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+            </edge>
+            <node xmi:type="uml:InitialNode" xmi:id="_ZQVYGlUlEeitnIpJqiswOg" name="Start" outgoing="_ZQVYDlUlEeitnIpJqiswOg _ZQVYFFUlEeitnIpJqiswOg _ZQVYF1UlEeitnIpJqiswOg"/>
+            <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZQVYG1UlEeitnIpJqiswOg" name="start waiting" incoming="_ZQVYEVUlEeitnIpJqiswOg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYHFUlEeitnIpJqiswOg" name="Setup out file" incoming="_ZQVYDlUlEeitnIpJqiswOg _ZQVYFFUlEeitnIpJqiswOg" outgoing="_ZQVYEVUlEeitnIpJqiswOg">
+              <body>// TODO body of OpaqueAction1</body>
+            </node>
+          </structuredNode>
+          <structuredNode xmi:id="_ZQVYHVUlEeitnIpJqiswOg" name="Start threads" incoming="_ZQVYAFUlEeitnIpJqiswOg" outgoing="_ZQVYA1UlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:InitialNode" xmi:id="_ZQVYBlUlEeitnIpJqiswOg" name="start" outgoing="_ZQVX8VUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYB1UlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_ZQVX-lUlEeitnIpJqiswOg" outgoing="_ZQVX_VUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+          <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYCFUlEeitnIpJqiswOg" name="Threads" incoming="_ZQVX_VUlEeitnIpJqiswOg" outgoing="_ZQVX91UlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYCVUlEeitnIpJqiswOg" name="Queues" incoming="_ZQVX9FUlEeitnIpJqiswOg" outgoing="_ZQVX-lUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:CallOperationAction" xmi:id="_ZQVYClUlEeitnIpJqiswOg" name="join_call" incoming="_ZQVYA1UlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+            <target xmi:id="_ZQVYC1UlEeitnIpJqiswOg" name="CUI"/>
+          </node>
+        </ownedBehavior>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYHlUlEeitnIpJqiswOg" target="_ZQVYOVUlEeitnIpJqiswOg" source="_ZQVYM1UlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYH1UlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYIFUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYIVUlEeitnIpJqiswOg" target="_ZQVYNlUlEeitnIpJqiswOg" source="_ZQVYOVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYIlUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYI1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYJFUlEeitnIpJqiswOg" target="_ZQVYOlUlEeitnIpJqiswOg" source="_ZQVYNVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYJVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYJlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYJ1UlEeitnIpJqiswOg" target="_ZQVYNFUlEeitnIpJqiswOg" source="_ZQVYNlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYKFUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYKVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYKlUlEeitnIpJqiswOg" target="_ZQVYNVUlEeitnIpJqiswOg" source="_ZQVYNFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYK1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYLFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYLVUlEeitnIpJqiswOg" target="_ZQVYSlUlEeitnIpJqiswOg" source="_ZQVYOlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYLlUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYL1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYMFUlEeitnIpJqiswOg" target="_ZQVYN1UlEeitnIpJqiswOg" source="_ZQVYSlUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYMVUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYMlUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+        </edge>
+        <structuredNode xmi:id="_ZQVYOVUlEeitnIpJqiswOg" name="initializing queues" incoming="_ZQVYHlUlEeitnIpJqiswOg" outgoing="_ZQVYIVUlEeitnIpJqiswOg"/>
+        <structuredNode xmi:id="_ZQVYOlUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_ZQVYJFUlEeitnIpJqiswOg _ZQVYRFUlEeitnIpJqiswOg" outgoing="_ZQVYLVUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYO1UlEeitnIpJqiswOg" target="_ZQVYSVUlEeitnIpJqiswOg" source="_ZQVYR1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYPFUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYPVUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYPlUlEeitnIpJqiswOg" target="_ZQVYSFUlEeitnIpJqiswOg" source="_ZQVYSVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYP1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYQFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYQVUlEeitnIpJqiswOg" target="_ZQVYSVUlEeitnIpJqiswOg" source="_ZQVYR1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYQlUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYQ1UlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYRFUlEeitnIpJqiswOg" target="_ZQVYOlUlEeitnIpJqiswOg" source="_ZQVYR1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYRVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYRlUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+          </edge>
+          <node xmi:type="uml:InitialNode" xmi:id="_ZQVYR1UlEeitnIpJqiswOg" name="Start" outgoing="_ZQVYO1UlEeitnIpJqiswOg _ZQVYQVUlEeitnIpJqiswOg _ZQVYRFUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZQVYSFUlEeitnIpJqiswOg" name="start waiting" incoming="_ZQVYPlUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYSVUlEeitnIpJqiswOg" name="Setup out file" incoming="_ZQVYO1UlEeitnIpJqiswOg _ZQVYQVUlEeitnIpJqiswOg" outgoing="_ZQVYPlUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+        </structuredNode>
+        <structuredNode xmi:id="_ZQVYSlUlEeitnIpJqiswOg" name="Start threads" incoming="_ZQVYLVUlEeitnIpJqiswOg" outgoing="_ZQVYMFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_ZQVYM1UlEeitnIpJqiswOg" name="start" outgoing="_ZQVYHlUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYNFUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_ZQVYJ1UlEeitnIpJqiswOg" outgoing="_ZQVYKlUlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYNVUlEeitnIpJqiswOg" name="Threads" incoming="_ZQVYKlUlEeitnIpJqiswOg" outgoing="_ZQVYJFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYNlUlEeitnIpJqiswOg" name="Queues" incoming="_ZQVYIVUlEeitnIpJqiswOg" outgoing="_ZQVYJ1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZQVYN1UlEeitnIpJqiswOg" name="join_call" incoming="_ZQVYMFUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+          <target xmi:id="_ZQVYOFUlEeitnIpJqiswOg" name="CUI"/>
+        </node>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZQVYS1UlEeitnIpJqiswOg" name="Setup" node="_ZQVYj1UlEeitnIpJqiswOg _ZQVYkFUlEeitnIpJqiswOg _ZQVYkVUlEeitnIpJqiswOg _ZQVYklUlEeitnIpJqiswOg _ZQVYk1UlEeitnIpJqiswOg _ZQVYlVUlEeitnIpJqiswOg _ZQVYllUlEeitnIpJqiswOg _ZQVYplUlEeitnIpJqiswOg" group="_ZQVYlVUlEeitnIpJqiswOg _ZQVYllUlEeitnIpJqiswOg _ZQVYplUlEeitnIpJqiswOg">
+        <ownedBehavior xmi:type="uml:Activity" xmi:id="_ZQVYTFUlEeitnIpJqiswOg" name="Setup" node="_ZQVYYlUlEeitnIpJqiswOg _ZQVYY1UlEeitnIpJqiswOg _ZQVYZFUlEeitnIpJqiswOg _ZQVYZVUlEeitnIpJqiswOg _ZQVYZlUlEeitnIpJqiswOg _ZQVYaFUlEeitnIpJqiswOg _ZQVYaVUlEeitnIpJqiswOg _ZQVYeVUlEeitnIpJqiswOg" group="_ZQVYaFUlEeitnIpJqiswOg _ZQVYaVUlEeitnIpJqiswOg _ZQVYeVUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYTVUlEeitnIpJqiswOg" target="_ZQVYaFUlEeitnIpJqiswOg" source="_ZQVYYlUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYTlUlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYT1UlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYUFUlEeitnIpJqiswOg" target="_ZQVYZVUlEeitnIpJqiswOg" source="_ZQVYaFUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYUVUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYUlUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYU1UlEeitnIpJqiswOg" target="_ZQVYaVUlEeitnIpJqiswOg" source="_ZQVYZFUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYVFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYVVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYVlUlEeitnIpJqiswOg" target="_ZQVYY1UlEeitnIpJqiswOg" source="_ZQVYZVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYV1UlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYWFUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYWVUlEeitnIpJqiswOg" target="_ZQVYZFUlEeitnIpJqiswOg" source="_ZQVYY1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYWlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYW1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYXFUlEeitnIpJqiswOg" target="_ZQVYeVUlEeitnIpJqiswOg" source="_ZQVYaVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYXVUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYXlUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYX1UlEeitnIpJqiswOg" target="_ZQVYZlUlEeitnIpJqiswOg" source="_ZQVYeVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYYFUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYYVUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+          </edge>
+          <structuredNode xmi:id="_ZQVYaFUlEeitnIpJqiswOg" name="initializing queues" incoming="_ZQVYTVUlEeitnIpJqiswOg" outgoing="_ZQVYUFUlEeitnIpJqiswOg"/>
+          <structuredNode xmi:id="_ZQVYaVUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_ZQVYU1UlEeitnIpJqiswOg _ZQVYc1UlEeitnIpJqiswOg" outgoing="_ZQVYXFUlEeitnIpJqiswOg">
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYalUlEeitnIpJqiswOg" target="_ZQVYeFUlEeitnIpJqiswOg" source="_ZQVYdlUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYa1UlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYbFUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYbVUlEeitnIpJqiswOg" target="_ZQVYd1UlEeitnIpJqiswOg" source="_ZQVYeFUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYblUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYb1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYcFUlEeitnIpJqiswOg" target="_ZQVYeFUlEeitnIpJqiswOg" source="_ZQVYdlUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYcVUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYclUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+            </edge>
+            <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYc1UlEeitnIpJqiswOg" target="_ZQVYaVUlEeitnIpJqiswOg" source="_ZQVYdlUlEeitnIpJqiswOg">
+              <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYdFUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+              <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYdVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+            </edge>
+            <node xmi:type="uml:InitialNode" xmi:id="_ZQVYdlUlEeitnIpJqiswOg" name="Start" outgoing="_ZQVYalUlEeitnIpJqiswOg _ZQVYcFUlEeitnIpJqiswOg _ZQVYc1UlEeitnIpJqiswOg"/>
+            <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZQVYd1UlEeitnIpJqiswOg" name="start waiting" incoming="_ZQVYbVUlEeitnIpJqiswOg"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYeFUlEeitnIpJqiswOg" name="Setup out file" incoming="_ZQVYalUlEeitnIpJqiswOg _ZQVYcFUlEeitnIpJqiswOg" outgoing="_ZQVYbVUlEeitnIpJqiswOg">
+              <body>// TODO body of OpaqueAction1</body>
+            </node>
+          </structuredNode>
+          <structuredNode xmi:id="_ZQVYeVUlEeitnIpJqiswOg" name="Start threads" incoming="_ZQVYXFUlEeitnIpJqiswOg" outgoing="_ZQVYX1UlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:InitialNode" xmi:id="_ZQVYYlUlEeitnIpJqiswOg" name="start" outgoing="_ZQVYTVUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYY1UlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_ZQVYVlUlEeitnIpJqiswOg" outgoing="_ZQVYWVUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+          <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYZFUlEeitnIpJqiswOg" name="Threads" incoming="_ZQVYWVUlEeitnIpJqiswOg" outgoing="_ZQVYU1UlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYZVUlEeitnIpJqiswOg" name="Queues" incoming="_ZQVYUFUlEeitnIpJqiswOg" outgoing="_ZQVYVlUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:CallOperationAction" xmi:id="_ZQVYZlUlEeitnIpJqiswOg" name="join_call" incoming="_ZQVYX1UlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+            <target xmi:id="_ZQVYZ1UlEeitnIpJqiswOg" name="CUI"/>
+          </node>
+        </ownedBehavior>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYelUlEeitnIpJqiswOg" target="_ZQVYlVUlEeitnIpJqiswOg" source="_ZQVYj1UlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYe1UlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYfFUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYfVUlEeitnIpJqiswOg" target="_ZQVYklUlEeitnIpJqiswOg" source="_ZQVYlVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYflUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYf1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYgFUlEeitnIpJqiswOg" target="_ZQVYllUlEeitnIpJqiswOg" source="_ZQVYkVUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYgVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYglUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYg1UlEeitnIpJqiswOg" target="_ZQVYkFUlEeitnIpJqiswOg" source="_ZQVYklUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYhFUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYhVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYhlUlEeitnIpJqiswOg" target="_ZQVYkVUlEeitnIpJqiswOg" source="_ZQVYkFUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYh1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYiFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYiVUlEeitnIpJqiswOg" target="_ZQVYplUlEeitnIpJqiswOg" source="_ZQVYllUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYilUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYi1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYjFUlEeitnIpJqiswOg" target="_ZQVYk1UlEeitnIpJqiswOg" source="_ZQVYplUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYjVUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYjlUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+        </edge>
+        <structuredNode xmi:id="_ZQVYlVUlEeitnIpJqiswOg" name="initializing queues" incoming="_ZQVYelUlEeitnIpJqiswOg" outgoing="_ZQVYfVUlEeitnIpJqiswOg"/>
+        <structuredNode xmi:id="_ZQVYllUlEeitnIpJqiswOg" name="Setup exception handler" incoming="_ZQVYgFUlEeitnIpJqiswOg _ZQVYoFUlEeitnIpJqiswOg" outgoing="_ZQVYiVUlEeitnIpJqiswOg">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYl1UlEeitnIpJqiswOg" target="_ZQVYpVUlEeitnIpJqiswOg" source="_ZQVYo1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYmFUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYmVUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYmlUlEeitnIpJqiswOg" target="_ZQVYpFUlEeitnIpJqiswOg" source="_ZQVYpVUlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYm1UlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYnFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYnVUlEeitnIpJqiswOg" target="_ZQVYpVUlEeitnIpJqiswOg" source="_ZQVYo1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYnlUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYn1UlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+          </edge>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYoFUlEeitnIpJqiswOg" target="_ZQVYllUlEeitnIpJqiswOg" source="_ZQVYo1UlEeitnIpJqiswOg">
+            <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYoVUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+            <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYolUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+          </edge>
+          <node xmi:type="uml:InitialNode" xmi:id="_ZQVYo1UlEeitnIpJqiswOg" name="Start" outgoing="_ZQVYl1UlEeitnIpJqiswOg _ZQVYnVUlEeitnIpJqiswOg _ZQVYoFUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZQVYpFUlEeitnIpJqiswOg" name="start waiting" incoming="_ZQVYmlUlEeitnIpJqiswOg"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYpVUlEeitnIpJqiswOg" name="Setup out file" incoming="_ZQVYl1UlEeitnIpJqiswOg _ZQVYnVUlEeitnIpJqiswOg" outgoing="_ZQVYmlUlEeitnIpJqiswOg">
+            <body>// TODO body of OpaqueAction1</body>
+          </node>
+        </structuredNode>
+        <structuredNode xmi:id="_ZQVYplUlEeitnIpJqiswOg" name="Start threads" incoming="_ZQVYiVUlEeitnIpJqiswOg" outgoing="_ZQVYjFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:InitialNode" xmi:id="_ZQVYj1UlEeitnIpJqiswOg" name="start" outgoing="_ZQVYelUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYkFUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_ZQVYg1UlEeitnIpJqiswOg" outgoing="_ZQVYhlUlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYkVUlEeitnIpJqiswOg" name="Threads" incoming="_ZQVYhlUlEeitnIpJqiswOg" outgoing="_ZQVYgFUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYklUlEeitnIpJqiswOg" name="Queues" incoming="_ZQVYfVUlEeitnIpJqiswOg" outgoing="_ZQVYg1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:CallOperationAction" xmi:id="_ZQVYk1UlEeitnIpJqiswOg" name="join_call" incoming="_ZQVYjFUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+          <target xmi:id="_ZQVYlFUlEeitnIpJqiswOg" name="CUI"/>
+        </node>
+      </ownedBehavior>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYp1UlEeitnIpJqiswOg" target="_ZQVYwlUlEeitnIpJqiswOg" source="_ZQVYvFUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYqFUlEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYqVUlEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYqlUlEeitnIpJqiswOg" target="_ZQVYv1UlEeitnIpJqiswOg" source="_ZQVYwlUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYq1UlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYrFUlEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYrVUlEeitnIpJqiswOg" target="_ZQVYw1UlEeitnIpJqiswOg" source="_ZQVYvlUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYrlUlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYr1UlEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYsFUlEeitnIpJqiswOg" target="_ZQVYvVUlEeitnIpJqiswOg" source="_ZQVYv1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYsVUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYslUlEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYs1UlEeitnIpJqiswOg" target="_ZQVYvlUlEeitnIpJqiswOg" source="_ZQVYvVUlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYtFUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYtVUlEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYtlUlEeitnIpJqiswOg" target="_ZQVY01UlEeitnIpJqiswOg" source="_ZQVYw1UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYt1UlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYuFUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYuVUlEeitnIpJqiswOg" target="_ZQVYwFUlEeitnIpJqiswOg" source="_ZQVY01UlEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYulUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYu1UlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+      </edge>
+      <structuredNode xmi:id="_ZQVYwlUlEeitnIpJqiswOg" name="initializing queues" incoming="_ZQVYp1UlEeitnIpJqiswOg" outgoing="_ZQVYqlUlEeitnIpJqiswOg"/>
+      <structuredNode xmi:id="_ZQVYw1UlEeitnIpJqiswOg" name="Setup exception handler" incoming="_ZQVYrVUlEeitnIpJqiswOg _ZQVYzVUlEeitnIpJqiswOg" outgoing="_ZQVYtlUlEeitnIpJqiswOg">
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYxFUlEeitnIpJqiswOg" target="_ZQVY0lUlEeitnIpJqiswOg" source="_ZQVY0FUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYxVUlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYxlUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYx1UlEeitnIpJqiswOg" target="_ZQVY0VUlEeitnIpJqiswOg" source="_ZQVY0lUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYyFUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYyVUlEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYylUlEeitnIpJqiswOg" target="_ZQVY0lUlEeitnIpJqiswOg" source="_ZQVY0FUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYy1UlEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYzFUlEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+        </edge>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_ZQVYzVUlEeitnIpJqiswOg" target="_ZQVYw1UlEeitnIpJqiswOg" source="_ZQVY0FUlEeitnIpJqiswOg">
+          <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZQVYzlUlEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+          <weight xmi:type="uml:LiteralInteger" xmi:id="_ZQVYz1UlEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+        </edge>
+        <node xmi:type="uml:InitialNode" xmi:id="_ZQVY0FUlEeitnIpJqiswOg" name="Start" outgoing="_ZQVYxFUlEeitnIpJqiswOg _ZQVYylUlEeitnIpJqiswOg _ZQVYzVUlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:ActivityFinalNode" xmi:id="_ZQVY0VUlEeitnIpJqiswOg" name="start waiting" incoming="_ZQVYx1UlEeitnIpJqiswOg"/>
+        <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVY0lUlEeitnIpJqiswOg" name="Setup out file" incoming="_ZQVYxFUlEeitnIpJqiswOg _ZQVYylUlEeitnIpJqiswOg" outgoing="_ZQVYx1UlEeitnIpJqiswOg">
+          <body>// TODO body of OpaqueAction1</body>
+        </node>
+      </structuredNode>
+      <structuredNode xmi:id="_ZQVY01UlEeitnIpJqiswOg" name="Start threads" incoming="_ZQVYtlUlEeitnIpJqiswOg" outgoing="_ZQVYuVUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:InitialNode" xmi:id="_ZQVYvFUlEeitnIpJqiswOg" name="start" outgoing="_ZQVYp1UlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_ZQVYvVUlEeitnIpJqiswOg" name="Initialize system's threads" incoming="_ZQVYsFUlEeitnIpJqiswOg" outgoing="_ZQVYs1UlEeitnIpJqiswOg">
+        <body>// TODO body of OpaqueAction1</body>
+      </node>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYvlUlEeitnIpJqiswOg" name="Threads" incoming="_ZQVYs1UlEeitnIpJqiswOg" outgoing="_ZQVYrVUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:DataStoreNode" xmi:id="_ZQVYv1UlEeitnIpJqiswOg" name="Queues" incoming="_ZQVYqlUlEeitnIpJqiswOg" outgoing="_ZQVYsFUlEeitnIpJqiswOg"/>
+      <node xmi:type="uml:CallOperationAction" xmi:id="_ZQVYwFUlEeitnIpJqiswOg" name="join_call" incoming="_ZQVYuVUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+        <target xmi:id="_ZQVYwVUlEeitnIpJqiswOg" name="CUI"/>
+      </node>
+    </ownedBehavior>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_axyOUFUjEeitnIpJqiswOg" target="_XViw8FUjEeitnIpJqiswOg" source="_Nw81QFUjEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_axyOUVUjEeitnIpJqiswOg" name="start_To_initializing queues_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_axyOUlUjEeitnIpJqiswOg" name="start_To_initializing queues_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_uLwTsFUjEeitnIpJqiswOg" target="_3ysjUFUkEeitnIpJqiswOg" source="_XViw8FUjEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_uLwTsVUjEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_uLwTslUjEeitnIpJqiswOg" name="initializing queues_To_Initialize system's threads_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XDKyEFUkEeitnIpJqiswOg" target="_5bdGUFUjEeitnIpJqiswOg" source="_zpM-YFUkEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_XDKyEVUkEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_XDKyElUkEeitnIpJqiswOg" name="Initialize system's threads_To_Setup exception handler_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_64Ow4FUkEeitnIpJqiswOg" target="_hMUBwFUjEeitnIpJqiswOg" source="_3ysjUFUkEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_64Ow4VUkEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_64Ow4lUkEeitnIpJqiswOg" name="Queues_To_Initialize system's threads_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_7T5ZMFUkEeitnIpJqiswOg" target="_zpM-YFUkEeitnIpJqiswOg" source="_hMUBwFUjEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_7T5ZMVUkEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_7T5ZMlUkEeitnIpJqiswOg" name="Initialize system's threads_To_Threads_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_IWdQkFUlEeitnIpJqiswOg" target="_pIPhEFUkEeitnIpJqiswOg" source="_5bdGUFUjEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_IWdQkVUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_IWdQklUlEeitnIpJqiswOg" name="Setup exception handler_To_Start threads_weight"/>
+    </edge>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_R3Ui0FUlEeitnIpJqiswOg" target="_MXigYFUlEeitnIpJqiswOg" source="_pIPhEFUkEeitnIpJqiswOg">
+      <guard xmi:type="uml:LiteralBoolean" xmi:id="_R3Ui0VUlEeitnIpJqiswOg" name="Start threads_To_join_call_guard" value="true"/>
+      <weight xmi:type="uml:LiteralInteger" xmi:id="_R3Ui0lUlEeitnIpJqiswOg" name="Start threads_To_join_call_weight"/>
+    </edge>
+    <structuredNode xmi:id="_XViw8FUjEeitnIpJqiswOg" name="initializing queues" incoming="_axyOUFUjEeitnIpJqiswOg" outgoing="_uLwTsFUjEeitnIpJqiswOg"/>
+    <structuredNode xmi:id="_5bdGUFUjEeitnIpJqiswOg" name="Setup exception handler" incoming="_XDKyEFUkEeitnIpJqiswOg _ZfV5kFUkEeitnIpJqiswOg" outgoing="_IWdQkFUlEeitnIpJqiswOg">
+      <edge xmi:type="uml:ControlFlow" xmi:id="_UwyfwFUkEeitnIpJqiswOg" target="_B-s5wFUkEeitnIpJqiswOg" source="_9ACAUFUjEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_UwyfwVUkEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_UwyfwlUkEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_VQALUFUkEeitnIpJqiswOg" target="__i4-oFUjEeitnIpJqiswOg" source="_B-s5wFUkEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_VQALUVUkEeitnIpJqiswOg" name="Setup out file_To_start waiting_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_VQALUlUkEeitnIpJqiswOg" name="Setup out file_To_start waiting_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_Y6KI4FUkEeitnIpJqiswOg" target="_B-s5wFUkEeitnIpJqiswOg" source="_9ACAUFUjEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_Y6KI4VUkEeitnIpJqiswOg" name="Start_To_Setup out file_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_Y6KI4lUkEeitnIpJqiswOg" name="Start_To_Setup out file_weight"/>
+      </edge>
+      <edge xmi:type="uml:ControlFlow" xmi:id="_ZfV5kFUkEeitnIpJqiswOg" target="_5bdGUFUjEeitnIpJqiswOg" source="_9ACAUFUjEeitnIpJqiswOg">
+        <guard xmi:type="uml:LiteralBoolean" xmi:id="_ZfV5kVUkEeitnIpJqiswOg" name="Start_To_Setup exception handler_guard" value="true"/>
+        <weight xmi:type="uml:LiteralInteger" xmi:id="_ZfV5klUkEeitnIpJqiswOg" name="Start_To_Setup exception handler_weight"/>
+      </edge>
+      <node xmi:type="uml:InitialNode" xmi:id="_9ACAUFUjEeitnIpJqiswOg" name="Start" outgoing="_UwyfwFUkEeitnIpJqiswOg _Y6KI4FUkEeitnIpJqiswOg _ZfV5kFUkEeitnIpJqiswOg"/>
+      <node xmi:type="uml:ActivityFinalNode" xmi:id="__i4-oFUjEeitnIpJqiswOg" name="start waiting" incoming="_VQALUFUkEeitnIpJqiswOg"/>
+      <node xmi:type="uml:OpaqueAction" xmi:id="_B-s5wFUkEeitnIpJqiswOg" name="Setup out file" incoming="_UwyfwFUkEeitnIpJqiswOg _Y6KI4FUkEeitnIpJqiswOg" outgoing="_VQALUFUkEeitnIpJqiswOg">
+        <body>// TODO body of OpaqueAction1</body>
+      </node>
+    </structuredNode>
+    <structuredNode xmi:id="_pIPhEFUkEeitnIpJqiswOg" name="Start threads" incoming="_IWdQkFUlEeitnIpJqiswOg" outgoing="_R3Ui0FUlEeitnIpJqiswOg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_Nw81QFUjEeitnIpJqiswOg" name="start" outgoing="_axyOUFUjEeitnIpJqiswOg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_hMUBwFUjEeitnIpJqiswOg" name="Initialize system's threads" incoming="_64Ow4FUkEeitnIpJqiswOg" outgoing="_7T5ZMFUkEeitnIpJqiswOg">
+      <body>// TODO body of OpaqueAction1</body>
+    </node>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_zpM-YFUkEeitnIpJqiswOg" name="Threads" incoming="_7T5ZMFUkEeitnIpJqiswOg" outgoing="_XDKyEFUkEeitnIpJqiswOg"/>
+    <node xmi:type="uml:DataStoreNode" xmi:id="_3ysjUFUkEeitnIpJqiswOg" name="Queues" incoming="_uLwTsFUjEeitnIpJqiswOg" outgoing="_64Ow4FUkEeitnIpJqiswOg"/>
+    <node xmi:type="uml:CallOperationAction" xmi:id="_MXigYFUlEeitnIpJqiswOg" name="join_call" incoming="_R3Ui0FUlEeitnIpJqiswOg" operation="_c8yPkFNdEei1bpdB11kHrA">
+      <target xmi:id="_MXigYVUlEeitnIpJqiswOg" name="CUI"/>
+    </node>
+  </packagedElement>
+</uml:Model>
