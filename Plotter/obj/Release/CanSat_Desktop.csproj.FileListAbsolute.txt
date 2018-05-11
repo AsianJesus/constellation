@@ -1,0 +1,11 @@
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Release\CanSat_Desktop.exe.config
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Release\CanSat_Desktop.exe
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Release\CanSat_Desktop.pdb
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Release\MySql.Data.dll
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\bin\Release\MySql.Data.xml
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Release\CanSat_Desktop.csprojResolveAssemblyReference.cache
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Release\CanSat_Desktop.Form1.resources
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Release\CanSat_Desktop.Properties.Resources.resources
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Release\CanSat_Desktop.csproj.GenerateResource.Cache
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Release\CanSat_Desktop.exe
+C:\Users\fruit\documents\visual studio 2017\Projects\CanSat_Desktop\CanSat_Desktop\obj\Release\CanSat_Desktop.pdb
