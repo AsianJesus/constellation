@@ -33,12 +33,15 @@ class BasicIO(Thread):
         self.opFlag = opFlag
         self.state = "read"
         self.comInput = comInput
+        self.exitFlag = False
         super().__init__()
     def start(self):
         self.opFlag.setState(True)
         super().start()
     def run(self):
         while True:
+            if exitFlag:
+                break
             sleep(1/4)
             if self.opFlag.getState():
                 continue
@@ -79,3 +82,5 @@ class BasicIO(Thread):
         BasicIO.errorLog = log
     def setCommands(comm):
         BasicIO.commands = comm
+    def terminate(self):
+        self.exitFlag = True
