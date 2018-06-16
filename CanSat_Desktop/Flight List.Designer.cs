@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Flight_List));
             this.rtbId = new System.Windows.Forms.RichTextBox();
             this.rtbName = new System.Windows.Forms.RichTextBox();
             this.rtbSTime = new System.Windows.Forms.RichTextBox();
@@ -118,6 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(686, 456);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -127,6 +130,8 @@
             this.Controls.Add(this.rtbSTime);
             this.Controls.Add(this.rtbName);
             this.Controls.Add(this.rtbId);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Flight_List";
             this.Text = "Flight_List";
             this.Load += new System.EventHandler(this.Flight_List_Load);

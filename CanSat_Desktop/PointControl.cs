@@ -7,7 +7,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CanSat_Desktop
 {
-    class PointControl
+    public class PointControl
     {
         private Series curve;
         public PointControl(Chart chart, int indx) { curve = chart.Series[0]; }
@@ -42,13 +42,13 @@ namespace CanSat_Desktop
         }
         public double MaximumAtRange(double leftX, double rightX)
         {
-            IEnumerable<double> elements = curve.Points.Select((DataPoint x) => { return x.YValues.Max(); }).Where((double x) => { return x >= leftX && x <= rightX; });
-            return elements.Count() == 0 ? MaximumY : elements.Max();
+            IEnumerable<DataPoint> elements = curve.Points.Where((DataPoint x) => x.XValue >= leftX && x.XValue <= rightX);            
+            return elements.Count() == 0 ? MaximumY : elements.Max((DataPoint p) => { return p.YValues.Max(); });
         }
         public double MinimumAtRange(double leftX, double rightX)
         {
-            IEnumerable<double> elements = curve.Points.Select((DataPoint x) => { return x.YValues.Max(); }).Where((double x) => { return x >= leftX && x <= rightX; });
-            return elements.Count() == 0 ? MinimumY : elements.Min();
+            IEnumerable<DataPoint> elements = curve.Points.Where((DataPoint x) => x.XValue >= leftX && x.XValue <= rightX);
+            return elements.Count() == 0 ? MaximumY : elements.Min((DataPoint p) => { return p.YValues.Min(); });
         }
         public double MaximumX
         {
@@ -128,6 +128,10 @@ namespace CanSat_Desktop
             {
                 curve.Name = value;
             }
+        }
+        public void AddSeriesToChart(Chart chart)
+        {
+            chart.Series.Add(curve);
         }
     }
 }

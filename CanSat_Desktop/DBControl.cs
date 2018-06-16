@@ -23,7 +23,7 @@ namespace CanSat_Desktop
             stringBuilder.UserID = user;
             stringBuilder.Password = passw;
             stringBuilder.Database = db;
-            connection = new MySqlConnection(stringBuilder.GetConnectionString(false));
+            connection = new MySqlConnection(stringBuilder.GetConnectionString(passw != null && passw != ""));
         }
         public DBControl(DBControl db)
         {
@@ -49,8 +49,9 @@ namespace CanSat_Desktop
                 connection.Open();
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                string msg = e.ToString();
                 return false;
             }
         }
@@ -111,40 +112,39 @@ namespace CanSat_Desktop
                 return false;
             }
         }
-        public List<List<string>> ExetuceQuery(MySqlCommand com)
+        public List<List<string>> ExecuteQuery(MySqlCommand com)
         {
+            
             MySqlCommand buffer = command;
             Command = com;
             var result = ExecuteQuery();
             command = buffer;
             return result;
         }
-        public List<List<string>> ExecuteQuery()
+        public List<List<String>> ExecuteQuery()
         {
             if (command == null)
                 return null;
             if (!IsOpen())
-                Open();
-            this.command.Prepare();
-            MySqlDataReader dataReader = command.ExecuteReader();
-            List<List<string>> result = null;
-            try
             {
-                result = new List<List<string>>(dataReader.FieldCount);
-                for (int i = 0; i < dataReader.FieldCount; i++)
-                    result.Add(new List<string>());
-                while (dataReader.Read())
+                if(!Open())
                 {
-                    for(int i = 0;i < dataReader.FieldCount; i++)
-                    {
-                        result[i].Add(dataReader[i].ToString());
-                    }
+                    return null;
                 }
             }
-            finally
+            MySqlDataReader dataReader = command.ExecuteReader();
+            if (dataReader == null)
+                return null;
+            List<List<String>> result = new List<List<String>>();
+            int indx = 0;
+            while (dataReader.Read())
             {
-                dataReader.Close();
+                result.Add(new List<String>());
+                for (int i = 0; i < dataReader.FieldCount; i++)
+                    result[indx].Add(dataReader.GetValue(i).ToString());
+                indx++;
             }
+            dataReader.Close();
             return result;
         }
         public bool IsOpen()

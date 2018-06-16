@@ -8,7 +8,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CanSat_Desktop
 {
-    class ViewControlUnit
+    public class ViewControlUnit
     {
         private ChartArea area;
         private double widthX, widthY;

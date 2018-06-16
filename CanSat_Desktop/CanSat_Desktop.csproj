@@ -75,11 +75,17 @@
     <Compile Include="Flight List.Designer.cs">
       <DependentUpon>Flight List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="GraphicViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GraphicViewer.Designer.cs">
+      <DependentUpon>GraphicViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main form.Designer.cs">
+      <DependentUpon>Main form.cs</DependentUpon>
     </Compile>
     <Compile Include="InputID.cs">
       <SubType>Form</SubType>
@@ -87,6 +93,7 @@
     <Compile Include="InputID.Designer.cs">
       <DependentUpon>InputID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Packet.cs" />
     <Compile Include="PointControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +110,11 @@
     <EmbeddedResource Include="Flight List.resx">
       <DependentUpon>Flight List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GraphicViewer.resx">
+      <DependentUpon>GraphicViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main form.resx">
+      <DependentUpon>Main form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputID.resx">
       <DependentUpon>InputID.cs</DependentUpon>
@@ -118,6 +128,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="cansatDataSet.xsc">
+      <DependentUpon>cansatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="cansatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="cansatDataSet.xss">
+      <DependentUpon>cansatDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

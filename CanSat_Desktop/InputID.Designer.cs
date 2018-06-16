@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputID));
             this.tbID = new System.Windows.Forms.TextBox();
             this.btnApp = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnApp);
             this.Controls.Add(this.tbID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InputID";
             this.Text = "InputID";
             this.ResumeLayout(false);

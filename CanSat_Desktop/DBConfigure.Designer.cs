@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DBConfigure));
             this.tbServ = new System.Windows.Forms.TextBox();
             this.tbUID = new System.Windows.Forms.TextBox();
             this.tbDB = new System.Windows.Forms.TextBox();
@@ -65,6 +66,7 @@
             // 
             this.tbPassw.Location = new System.Drawing.Point(13, 77);
             this.tbPassw.Name = "tbPassw";
+            this.tbPassw.PasswordChar = '*';
             this.tbPassw.Size = new System.Drawing.Size(115, 20);
             this.tbPassw.TabIndex = 3;
             // 
@@ -139,6 +141,8 @@
             this.Controls.Add(this.tbDB);
             this.Controls.Add(this.tbUID);
             this.Controls.Add(this.tbServ);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DBConfigure";
             this.Text = "DBConfigure";
             this.Load += new System.EventHandler(this.DBConfigure_Load);
