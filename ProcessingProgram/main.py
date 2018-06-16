@@ -1,13 +1,8 @@
-import time
-import threading
-from fileio import FileIO
-from flag import Flag
-from queue import Queue
-from exceptionhandler import ExceptionHandler
-from dbproxy import DataBaseWorker, DBCommand
-from mysql.connector import connect
-from cuiinterface import Processes, CUI
-from session import Session
+import time, threading, random, queue
+import basicio, processing,distributor,dbproxy,fileio 
+from cuiinterface import Processes,Queues,CUI
+import session,flag
+import exceptionhandler
 
 class QueueShower(threading.Thread):
     def __init__(self,q):
@@ -21,82 +16,71 @@ class QueueShower(threading.Thread):
             while not self.q.empty():
                 element = self.q.get()
                 if element:
-                    print(element)
+                    print(element.getInfo())
             time.sleep(1/2)
     def terminate(self):
         self.exitFlag = True
-fname = "C:\\Users\\fruit\\Desktop\\log.txt"
-
-dbCommands = {
-        'ins_id': 'INSERT INTO test(id) VALUES(%s)',
-        'ins_name' : 'INSERT INTO test(name) VALUES(%s);',
-        'ins_all' : 'INSERT INTO test(id,name) VALUES(%s,%s);',
-        'get_all' : 'SELECT * FROM test;'
-    }
 
 host = "localhost"
 uid = "root"
 passw = "1123581321ElViNBV"
 schema = "pourtest"
 
-flags = {
-        Processes.BasicIO: Flag(True),
-        Processes.Processing:Flag(True),
-        Processes.Distribution : Flag(True),
-        Processes.DatabaseIO : Flag(True),
-        Processes.FileIO : Flag(True)
+dbproxy.DBCommand.comList = {
+    "ins_data" : "INSERT INTO data VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);",
+    "ins_id" : "INSERT INTO flights(id,name) VALUES(%s,%s);"
     }
-s = Session(5,"Nope")
 
-c = CUI(s,flags)
+exceptionOutput = queue.Queue(20)
+fileOutput = queue.Queue(20)
 
-c.start()
-c.join()
+flags = {p[0] : flag.Flag(False) for p in Processes.getAll() }
+queues = {q[0] : queue.Queue(50) for q in Queues.getAll()}
 
-#con = connect(host=host,user=uid,password=passw,database=schema)
-#cur = con.cursor(True)
-#cur.execute(dbCommands['ins_id'],(6,))
-#con.commit()
-print("Ending")
-input("")
-exit()
+#sID = ""
+#while not sID.isnumeric():
+#    sID = input("Input session id: ")
+sID = 8
+sName = ""
+#sName = input("Input session name: ")
 
+ses = session.Session(sID,sName)
 
-dbIn = Queue(100)
-dbOut = Queue(100)
-errorLog = Queue(100)
-errorOut = Queue(100)
+expOut = fileio.FileIO("log.txt",fileOutput,flag.Flag())
+expHandler = exceptionhandler.ExceptionHandler(exceptionOutput,fileOutput)
 
-errorHandler = ExceptionHandler([errorLog],[errorOut])
-errorHandler.start()
+processing.DataHandler.setErrorLog(exceptionOutput)
+distributor.Distributor.setErrorLog(exceptionOutput)
+dbproxy.DataBaseWorker.setErrorLog(exceptionOutput)
+fileio.FileIO.setErrorLog(exceptionOutput)
 
-f = FileIO(fname,errorOut,Flag(True))
+xbeeWorker = basicio.BasicIO("COM6",9600,queues[Queues.XBeeInput],queues[Queues.XBeeOutput],flags[Processes.BasicIO])
+process = processing.DataHandler(queues[Queues.XBeeOutput],queues[Queues.ProcessingOutput],flags[Processes.Processing])
+distrib = distributor.Distributor(queues[Queues.ProcessingOutput],queues[Queues.DatabaseInput],queues[Queues.FirstFileInput],queues[Queues.SecondFileInput],flags[Processes.Distribution],ses)
+dbWorker = dbproxy.DataBaseWorker(host,uid,passw,schema,queues[Queues.DatabaseInput],queue.Queue(100),flags[Processes.DatabaseIO])
+fWorkerf = fileio.FileIO("output(1).csv",queues[Queues.FirstFileInput],flags[Processes.FileIO])
+fWorkers = fileio.FileIO("output(2).csv",queues[Queues.SecondFileInput],flags[Processes.FileIO])
 
-f.start()
+interface = CUI(ses,flags,queues)
 
-DBCommand.comList = dbCommands
-DataBaseWorker.errorLog = errorLog
+process.start()
+distrib.start()
+dbWorker.start()
+fWorkerf.start()
+fWorkers.start()
+expOut.start()
+expHandler.start()
 
-sh = QueueShower(dbOut)
-db = DataBaseWorker(host,uid,passw,schema,dbIn,dbOut,Flag(True))
+interface.start()
+interface.join()
 
-sh.start()
-db.start()
+xbeeWorker.terminate()
+process.terminate()
+distrib.terminate()
+dbWorker.terminate()
+fWorkerf.terminate()
+fWorkers.terminate()
+expOut.terminate()
+expHandler.terminate()
 
-dbIn.put("D")
-
-while True:
-    com = input("Type command or 'q' for exit: ")
-    if com == 'q':
-        sh.terminate()
-        db.terminate()
-        errorHandler.terminate()
-        f.terminate()
-        exit()
-    args = com.split(' ')
-    com = args[0]
-    args = tuple(args[1:])
-    if not com in dbCommands:
-        print("Wrong command")
-        continue
-    dbIn.put(DBCommand(com,args))
+exit(0)

@@ -36,3 +36,6 @@ class FileIO(Thread):
         self.file.flush()
     def terminate(self):
         self.exitFlag = True
+        self.opFlag.setState(False)
+    def setErrorLog(errorLog:Queue):
+        FileIO.errorLog = errorLog

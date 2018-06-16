@@ -31,7 +31,6 @@ class BasicIO(Thread):
         self.XBee = XBeeInterface(port,baudRate)
         self.output = output
         self.opFlag = opFlag
-        self.state = "read"
         self.comInput = comInput
         self.exitFlag = False
         super().__init__()
@@ -40,10 +39,10 @@ class BasicIO(Thread):
         super().start()
     def run(self):
         while True:
-            if exitFlag:
+            if self.exitFlag:
                 break
             sleep(1/4)
-            if self.opFlag.getState():
+            if not self.opFlag.getState():
                 continue
             self.__operate()            
     def stop(self):
@@ -51,12 +50,13 @@ class BasicIO(Thread):
     def __operate(self)->None:
         if not self.comInput.empty():
              comm = self.comInput.get()
-             self.comHandler(comm[0],comm[1])
-        if self.state == BasicIOCommands.read:
-             try:
-                 self.output.put(self.read())
-             except Exception as e:
-                  BasicIO.errorLog.put(e)
+             if isinstance(comm,str):
+                self.comHandler(comm)
+        else:
+            result = self.read()
+            if result is not None:
+                self.output.put(result)
+
     def read(self)->str:
         try:
             result = self.XBee.read()
@@ -69,18 +69,13 @@ class BasicIO(Thread):
             self.XBee.send(msg)
         except Exception as e:
             BasicIO.errorLog.put(e)
-    def comHandler(self,com,arg = ""):
-        if com == BasicIOCommands.send:
-            self.state = BasicIOCommands.send
-            write(str(arg))
-        else:
-           if com == BasicIOCommands.read:
-                self.state = BasicIO.read
-           else:
-                BasicIO.errorLog.put(Exception("Invalid command in BasicIO"))
+    def comHandler(self,com):
+        try:
+                write(com)
+        except Exception as e:
+                BasicIO.errorLog.put(e)
     def setErrorLog(log: Queue):
         BasicIO.errorLog = log
-    def setCommands(comm):
-        BasicIO.commands = comm
     def terminate(self):
         self.exitFlag = True
+        self.opFlag.setState(False)

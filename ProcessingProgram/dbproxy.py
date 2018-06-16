@@ -38,6 +38,8 @@ class DBInterface:
 
 class DataBaseWorker(Thread):
     errorLog : Queue
+    def setErrorLog(errorLog:Queue):
+        DataBaseWorker.errorLog = errorLog
     def __init__(self, host:str,uid:str,passw:str,schema:str,input:Queue,output:Queue,opFlag: Flag):
         self.conn = DBInterface(host,uid,passw,schema)
         self.input = input
@@ -72,3 +74,4 @@ class DataBaseWorker(Thread):
         return self.conn.execute(com,args)
     def terminate(self):
         self.exitFlag = True
+        self.opFlag.setState(False)
